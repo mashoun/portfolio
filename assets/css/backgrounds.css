@@ -1,0 +1,57 @@
+.bg-m-blue {
+    background-color: var(--m-blue);
+}
+
+.bg-m-green {
+    background-color: var(--m-green);
+}
+
+.bg-m-purple {
+    background-color: var(--m-purple);
+}
+
+.bg-m-yellow {
+    background-color: var(--m-yellow);
+}
+
+.bg-m-orange {
+    background-color: var(--m-orange);
+}
+
+.bg-m-light-grey {
+    background-color: var(--m-light-grey);
+}
+
+.bg-m-dark-grey {
+    background-color: var(--m-dark-grey);
+}
+
+.bg-m-light {
+    background-color: var(--m-light);
+}
+
+.bg-m-dark {
+    background-color: var(--m-dark);
+}
+
+.bg-grad-light {
+    /* background: var(--gradient-background); */
+    /* background: rgb(233, 236, 239);
+    background: linear-gradient(10deg, rgba(233, 236, 239, 1) 0%, rgba(233, 236, 239, 0) 70%); */
+    background: rgb(233, 233, 239);
+    background: radial-gradient(circle, var(--m-light) 20%, rgba(233, 233, 239, 0) 70%);
+}
+
+
+.bg-glass {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+
+.bg-glass-dark {
+    background: rgba(107, 107, 107, 0.7);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}

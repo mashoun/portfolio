@@ -1,0 +1,62 @@
+<header class="bg-light position-sticky top-0 z-3 p-2 shadow-sm border-bottom d-flex justify-content-start justify-content-lg-between align-items-center gap-3">
+    
+    <aside class="d-block d-lg-none" style="height: 24px;">
+        <div class="material-symbols-outlined" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" >menu</div>
+        <div class="offcanvas offcanvas-start p-3" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+            <section class="d-flex flex-column gap-2 align-items-center">
+                <div class="d-flex align-items-center gap-2">
+                    <img src="favicon.ico" alt="logo" class="img-fluid rounded navbar-logo" width="40">
+                    <div class="d-flex flex-column">
+                        <h1 class="fs-6 font-title">Mahmoud Mashoun</h1>
+                        <p class="text-fade font-mono fs-xsmall">Google Workspace Automation, Full Stack Web Developer & GDG Organiser.</p>
+                    </div>
+                </div>
+                <div class="w-100 d-flex flex-column align-items-center gap-2">
+                    <a href="/about" aria-label="about" role="button" title="about me" class="d-flex flex-fill gap-1 px-2 align-items-center bg-light border border-2 rounded fs-smaller">
+                        <span class="material-symbols-outlined fs-6">account_circle</span>
+                        <span class="font-mono text-lowercase">about</span>
+                    </a>
+                    <button data-bs-toggle="offcanvas" data-bs-target="#meetingSidebar" class="btn btn-sm btn-primary d-flex align-items-center gap-1">
+                        <span class="material-symbols-outlined fs-5">video_call</span>
+                        <span class="font-normal text-nowrap">New Meeting</span>
+                    </button>
+                </div>
+            </section>
+        </div>
+    </aside>
+    <section>
+        <div class="d-flex align-items-center gap-2">
+            <img src="favicon.ico" alt="logo" class="img-fluid rounded navbar-logo" width="40">
+            <div class="d-flex flex-column">
+                <h1 class="fs-6 font-title">Mahmoud Mashoun</h1>
+                <p class="text-fade d-none d-sm-block font-mono fs-xsmall">Google Workspace Automation, Full Stack Web Developer & GDG Organiser.</p>
+            </div>
+        </div>
+    </section>
+    <nav class="d-none font-normal fs-small d-lg-flex align-items-center gap-3">
+        <a href="/" :class="{'fw-bold text-primary': location.pathname == '/' || location.pathname == '/index.html'}">Home</a>
+        <a href="/projects/" :class="{'fw-bold text-primary': location.pathname == '/projects/'}">Projects</a>
+        <a href="/courses/" :class="{'fw-bold text-primary': location.pathname == '/courses/'}">Courses</a>
+        <a href="/events/" :class="{'fw-bold text-primary': location.pathname == '/events/'}">Events</a>
+        <a href="/blogs/" :class="{'fw-bold text-primary': location.pathname == '/blogs/'}">Blogs</a>
+        <a href="/links/" :class="{'fw-bold text-primary': location.pathname == '/links/'}">Links</a>
+        
+    </nav>
+    <section class="d-none d-lg-block">
+        <button data-bs-toggle="offcanvas" data-bs-target="#meetingSidebar" class="btn btn-sm btn-primary d-flex align-items-center gap-1">
+            <span class="material-symbols-outlined fs-5">video_call</span>
+            <span class="font-normal text-nowrap">New Meeting</span>
+        </button>
+    </section>
+</header>
+<aside>
+    <div class="offcanvas offcanvas-bottom" id="meetingSidebar">
+        <div class="offcanvas-header font-normal">
+            <h5 class="offcanvas-title">Schedule a meeting</h5>
+            <i role="button" title="close" class="bi bi-x-lg fs-4" data-bs-dismiss="offcanvas"></i>
+        </div>
+        <div class="offcanvas-body">
+            meeting form
+        </div>
+    </div>
+</aside>

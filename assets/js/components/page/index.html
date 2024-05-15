@@ -1,0 +1,80 @@
+<section class="container-fluid mt-2 mb-5">
+    <div class="row justify-content-center g-2">
+        <div class="col-12 col-xl-8">
+            <aside class="article-container">
+                <!-- Header -->
+                <section class="d-flex align-items-center justify-content-between gap-2 bg-light border rounded p-2">
+                    <div class="d-flex align-items-center gap-2">
+                        <img src="/favicon.ico" alt="logo" class="objet-fit-cover rounded border" width="45">
+                        <div class="d-flex flex-column">
+                            <h1 class="fs-6 font-normal fw-bold">Mahmoud Mashoun</h1>
+                            <h2 class="text-fade font-mono fs-xsmall">Google Workspace Automation, Full Stack Web Dev & GDG Organiser.</h2>
+                        </div>
+                    </div>
+                    <i class="bi bi-three-dots-vertical fs-5"></i>
+                </section>
+
+                <!-- MEDIA -->
+                <section class="article-media placeholder-glow">
+                    <figure class="ratio ratio-16x9 placeholder rounded"></figure>
+                </section>
+
+                <!-- BODY -->
+                <section class="article-body bg-light shadow-sm rounded">
+                    <div class="d-flex align-items-center gap-2">
+                        <strong aria-label="page badge" class="page-badge">_BADGE_</strong>
+                        <div class="d-flex align-items-center gap-2">
+                            <!-- <i class="bi bi-clock fs-small"></i> -->
+                            <time aria-label="page date" datetime="_TIMESTAMP_">{{utilities.timo('_TIMESTAMP_')}}</time>
+                        </div>
+                    </div>
+                    <h1 class="font-subtitle fs-1 text-m">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, maiores!</h1>
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="bi bi-arrow-return-right"></i>
+                        <span class="font-normal fs-small fw-bold text-fade text-capitalize">Lorem ipsum dolor sit amet.</span>
+                    </div>
+                    <slot></slot>
+                    <hr class="my-1">
+                    <section class="article-footer">
+                        <span aria-label="about" role="button" title="Translate to arabic" class="d-flex gap-1 px-2 align-items-center bg-light border border-2 rounded fs-smaller">
+                            <span class="material-symbols-outlined fs-6">g_translate</span>
+                            <span class="font-mono text-lowercase">translate</span>
+                        </span>
+                        <span aria-label="about" role="button" title="Share this page" class="d-flex gap-1 px-2 align-items-center bg-light border border-2 rounded fs-smaller">
+                            <span class="material-symbols-outlined fs-6">send</span>
+                            <span class="font-mono text-lowercase">send</span>
+                        </span>
+                    </section>
+                </section>
+            </aside>
+        </div>
+        <div class="col-12 col-xl-4 h-100">
+            <div class="row g-3">
+                <div class="col-12 sticky-part position-sticky">
+                    <aside class="p-2 bg-grad-light rounded text-center d-flex justify-content-center align-items-center gap-2">
+                        <strong class="font-subtitle fs-4">Check also</strong>
+                    </aside>
+                    
+                </div>
+                <div class="col-12 col-lg-6 col-xl-12" v-for="node in ['','','','','']">
+                    <div class="d-flex align-items-start gap-3 bg-light rounded shadow-sm p-2">
+                        <img src="https://picsum.photos/1080" alt="img" class="object-fit-cover shadow-sm rounded" width="100">
+                        <div class="d-flex flex-column justify-content-between gap-2 flex-fill" style="height: 100px;">
+                            <div class="d-flex flex-column gap-2">
+                                <div class="d-flex align-items-center gap-2">
+                                    <strong aria-label="page badge" class="page-badge">folder</strong>
+                                    <time aria-label="page date" datetime="_TIMESTAMP_">2 months ago</time>
+                                </div>
+                                <h6 class="fs-6 font-mono text-capitalize text-fade-2 text-primary fw-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, quibusdam?</h6>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center gap-3">
+                                <span class="text-m-dark-grey fs-xsmall font-mono">Continue Reading - 2 min</span>
+                                <span class="material-symbols-outlined fs-6">navigate_next</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

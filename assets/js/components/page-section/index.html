@@ -1,0 +1,47 @@
+<section class="container-fluid my-5 px-none px-lg-5">
+    <div class="row justify-content-between g-3">
+
+        <div class="col-12 col-lg-12">
+            <a :href="to" :title="'Navigate to '+ to">
+                <aside class="p-2 bg-grad-light mb-5 rounded text-center d-flex justify-content-center align-items-center gap-2">
+                    <strong class="font-subtitle fs-4">{{title}}</strong>
+                    <!-- <span class="material-symbols-outlined fs-4">navigate_next</span> -->
+                </aside>
+            </a>
+        </div>
+        <div class="col-12">
+            <swiper-container :pagination="{clickable:true}" :spaceBetween="10" :breakpoints="swiperBreakpoints">
+                <swiper-slide v-for="node in ['','','','','','','','','','']">
+                    <aside class="p-2 pb-3 bg-light d-flex flex-column gap-3 rounded shadow-sm">
+                        <figure class="ratio ratio-16x9"><img src="https://picsum.photos/1080" alt="img"
+                                class="object-fit-cover rounded"></figure>
+                        <div class="d-flex flex-column gap-2">
+                            <div class="d-flex align-items-center gap-2">
+                                <span class="page-badge">PROJECT</span>
+                                <time datetime="" class="">2 months ago</time>
+                            </div>
+                            <h5 class="fs-6 font-mono fw-bold text-m text-fade-2 text-capitalize">
+                                Build responsive websites using vue js and google apps script
+                            </h5>
+                            <div class="d-flex align-items-center gap-2">
+                                <i class="bi bi-arrow-return-right"></i>
+                                <span class="font-normal fs-small fw-bold text-fade text-capitalize">Lorem ipsum dolor sit amet.</span>
+                            </div>
+                            <p class="text-m-dark-grey fs-small text-fade-5 font-normal">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur eveniet nemo odit
+                                dignissimos aliquam a atque dolorum. Nostrum odit provident, et, voluptate voluptatem, eum
+                                officia minima sequi atque saepe distinctio.
+                            </p>
+                        </div>
+                        <hr class="my-0 py-0">
+                        <div class="d-flex justify-content-between align-items-center gap-3">
+                            <span class="text-m-dark-grey fs-xsmall font-mono">Continue Reading - 2 min</span>
+                            <span class="material-symbols-outlined fs-6">navigate_next</span>
+                        </div>
+        
+                    </aside>
+                </swiper-slide>
+            </swiper-container>
+        </div>
+    </div>
+</section>
