@@ -6,6 +6,7 @@ export default class Page {
             'status',
             'folder',
             'media',
+            'mediaLinks',
             'title',
             'subtitle',
             'badge',
