@@ -1,7 +1,9 @@
 <section id="pagination" class="position-sticky top-0 z-3 p-2 bg-dark text-light shadow-sm d-flex align-items-center gap-1 fs-small font-mono">
-    <a href="/"><i class="bi bi-grid"></i></a>
+    <a href="/">
+        <i class="bi bi-house"></i>
+    </a>
     <i class="bi bi-chevron-compact-right"></i>
     <a :href="'/'+utilities.directory().sub">{{utilities.directory().sub}}</a>
     <i class="bi bi-chevron-compact-right"></i>
-    <span class="text-secondary text-fade">{{utilities.directory().file}}</span>
+    <span class="text-light text-fade">{{utilities.directory().file}}</span>
 </section>

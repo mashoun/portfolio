@@ -422,3 +422,46 @@ time {
     top: 37px;
     z-index: 1;
 }
+
+blockquote{
+    padding-left: .3rem;
+    border: none;
+    border-left: 4px solid var(--m-dark-grey);
+    font-family: "Roboto Mono", sans-serif;
+}
+
+pre{
+    padding: .5rem;
+    background-color: var(--m-dark);
+    color: var(--m-light);
+    border-radius: .3rem;
+    font-family: "Roboto Mono", sans-serif;
+}
+
+.ql-align-center{
+    text-align: center;
+}
+
+.ql-align-right{
+    text-align: right;
+}
+
+.ql-direction-rtl{
+    direction: rtl;
+}
+
+article > p > img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: .3rem;
+}
+
+article > p > a {
+    background-color: var(--m-light);
+    border-radius: .2rem;
+    padding: 1px .5rem;
+    font-family: "Roboto Mono", sans-serif;
+    font-size: small;
+    text-decoration: underline;
+}
