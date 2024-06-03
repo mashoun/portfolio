@@ -1,9 +1,9 @@
 <section class="container-fluid mt-2 mb-5">
-    <div class="row justify-content-center g-2">
+    <div class="row justify-content-center g-3">
         <div class="col-12 col-xl-8">
-            <aside class="article-container">
+            <aside class="article-container bg-light rounded shadow-sm">
                 <!-- Header -->
-                <section class="d-flex align-items-center justify-content-between gap-2 bg-light border rounded p-2">
+                <section class="d-flex align-items-center justify-content-between gap-2">
                     <div class="d-flex align-items-center gap-2">
                         <img src="/favicon.ico" alt="logo" class="objet-fit-cover rounded border" width="45">
                         <div class="d-flex flex-column">
@@ -14,25 +14,52 @@
                 </section>
 
                 <!-- MEDIA -->
-                <section class="article-media placeholder-glow">
+                <section v-if="store.spinner" class="article-media placeholder-glow my-3">
                     <figure class="ratio ratio-16x9 placeholder rounded"></figure>
                 </section>
+                <media v-else :images="selectedPage.media" :links="selectedPage.mediaLinks"></media>
 
                 <!-- BODY -->
-                <section class="article-body bg-light shadow-sm rounded">
+                <section class="article-body">
+                    <!-- Badge and Time -->
                     <div class="d-flex align-items-center gap-2">
-                        <strong aria-label="page badge" class="page-badge">_BADGE_</strong>
+                        <strong v-if="store.spinner" aria-label="page badge" class="rounded-pill bg-secondary" style="width: 75px;height: 10px;"></strong>
+                        <strong v-else aria-label="page badge" class="page-badge">{{selectedPage.badge}}</strong>
+                        
                         <div class="d-flex align-items-center gap-2">
-                            <!-- <i class="bi bi-clock fs-small"></i> -->
-                            <time aria-label="page date" datetime="_TIMESTAMP_">{{utilities.timo('_TIMESTAMP_')}}</time>
+                            <span v-if="store.spinner" class="bg-secondary rounded" style="width: 75px;height: 10px;"></span>
+                            <time v-else aria-label="page date" :datetime="selectedPage.timestamp">{{utilities.timo(selectedPage.timestamp)}}</time>
                         </div>
                     </div>
-                    <h1 class="font-subtitle fs-1 text-m">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, maiores! - <span>Subtitle Goes Here</span></h1>
-                    <!-- <div class="d-flex align-items-center gap-2">
-                        <i class="bi bi-arrow-return-right"></i>
-                        <span class="font-normal fs-small fw-bold text-fade text-capitalize">Lorem ipsum dolor sit amet.</span>
-                    </div> -->
-                    <slot></slot>
+
+                    <!-- Titles -->
+                    <div v-if="store.spinner" class="d-flex align-items-center gap-2 placeholder-glow my-3">
+                        <span class="placeholder rounded-pill w-50" style="height: 16px;"></span>
+                        <span class="placeholder rounded-pill w-25" style="height: 16px;"></span>
+                    </div>
+                    <h1 v-else class="font-subtitle fs-1 text-m"><span>{{selectedPage.title}}</span> - <span>{{selectedPage.subtitle}}</span></h1>
+
+                    <!-- Article -->
+                    <div v-if="store.spinner"  class="d-flex flex-column gap-2 placeholder-glow">
+                        <span class="placeholder rounded-pill w-100" style="height: 10px;"></span>
+                        <span class="placeholder rounded-pill w-100" style="height: 10px;"></span>
+                        <span class="placeholder rounded-pill w-100" style="height: 10px;"></span>
+                        <span class="placeholder rounded-pill w-100" style="height: 10px;"></span>
+                        <span class="placeholder rounded-pill w-100" style="height: 10px;"></span>
+                        <span class="placeholder rounded-pill w-100" style="height: 10px;"></span>
+                        <span class="placeholder rounded-pill w-100" style="height: 10px;"></span>
+                        <span class="placeholder rounded-pill w-100" style="height: 10px;"></span>
+                        <span class="placeholder rounded-pill w-100" style="height: 10px;"></span>
+                        <span class="placeholder rounded-pill w-100" style="height: 10px;"></span>
+                        <span class="placeholder rounded-pill w-100" style="height: 10px;"></span>
+                        <span class="placeholder rounded-pill w-100" style="height: 10px;"></span>
+                        <span class="placeholder rounded-pill w-100" style="height: 10px;"></span>
+                        <span class="placeholder rounded-pill w-100" style="height: 10px;"></span>
+                        <span class="placeholder rounded-pill w-25" style="height: 10px;"></span>
+                    </div>
+                    <slot v-else ></slot>
+
+                    <!-- footer -->
                     <hr class="my-1">
                     <section class="article-footer">
                         <span aria-label="about" role="button" title="Translate to arabic" class="d-flex gap-1 px-2 align-items-center bg-light border border-2 rounded fs-smaller">
@@ -51,28 +78,58 @@
             <div class="row g-3">
                 <div class="col-12 sticky-part position-sticky">
                     <aside class="p-2 bg-grad-light rounded text-center d-flex justify-content-center align-items-center gap-2">
-                        <strong class="font-subtitle fs-4">Check also</strong>
+                        <strong class="font-subtitle fs-4">You might also like</strong>
                     </aside>
                     
                 </div>
-                <div class="col-12 col-lg-6 col-xl-12" v-for="node in ['','','','','']">
-                    <div class="d-flex align-items-start gap-3 bg-light rounded shadow-sm p-2">
-                        <img src="https://picsum.photos/1080" alt="img" class="object-fit-cover shadow-sm rounded" width="100">
-                        <div class="d-flex flex-column justify-content-between gap-2 flex-fill" style="height: 100px;">
-                            <div class="d-flex flex-column gap-2">
-                                <div class="d-flex align-items-center gap-2">
-                                    <strong aria-label="page badge" class="page-badge">folder</strong>
-                                    <time aria-label="page date" datetime="_TIMESTAMP_">2 months ago</time>
-                                </div>
-                                <h6 class="fs-6 font-mono text-capitalize text-fade-2 text-primary fw-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, quibusdam?</h6>
+                
+                <aside v-if="store.spinner" class="col-12 col-lg-6 col-xl-12 bg-light shadow-sm rounded p-2" v-for="node in ['','','']">
+                    <div class="row justify-content-between g-3">
+                        <div class="col-3">
+                            <div class="ratio ratio-16x9 placeholder-glow">
+                                <div class="placeholder object-fit-cover rounded"></div>
                             </div>
-                            <div class="d-flex justify-content-between align-items-center gap-3">
-                                <span class="text-m-dark-grey fs-xsmall font-mono">Continue Reading - 2 min</span>
-                                <span class="material-symbols-outlined fs-6">navigate_next</span>
+                        </div>
+                        <div class="col-9">
+                            <div class="d-flex flex-column justify-content-between gap-2 h-100 placeholder-glow">
+                                <div class="d-flex flex-column gap-2">
+                                    <span class="placeholder rounded-pill w-100" style="height: 7px;"></span>
+                                    <span class="placeholder rounded-pill w-75" style="height: 7px;"></span>
+                                </div>
+                                <span class="bg-secondary rounded" style="width: 100px;height: 5px;"></span>
                             </div>
                         </div>
                     </div>
-                </div>
+                </aside>
+                
+                <aside v-if="!store.spinner" class="col-12 col-lg-6 col-xl-12 bg-light shadow-sm rounded p-2" v-for="node in suggestions">
+                    <div class="row justify-content-between g-3">
+                        <div class="col-3">
+                            <div class="ratio ratio-16x9">
+                                <img :src="node.media.split(',')[0]" alt="img" class="object-fit-cover shadow-sm rounded">
+                            </div>
+                        </div>
+                        <div class="col-9">
+                            <div class="d-flex flex-column justify-content-between gap-2 h-100">
+                                <div class="d-flex flex-column gap-1">
+                                    <!-- <div class="d-flex align-items-center gap-2">
+                                        <strong aria-label="page badge" class="page-badge">{{node.folder}}</strong>
+                                        <time aria-label="page date" :datetime="node.timestamp">{{utilities.timo(node.timestamp)}}</time>
+                                    </div> -->
+                                    <h6 class="fs-small font-mono text-capitalize text-fade-2 text-m fw-bold">
+                                        <!-- <a :href="node.url">{{node.title}}</a> -->
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab cupiditate voluptatem, voluptate, quidem vel aliquid molestiae voluptates pariatur, aliquam eaque quia excepturi iste quas magni aspernatur modi necessitatibus commodi dolores.
+                                    </h6>
+                                </div>
+                                <a :href="node.url" class="d-flex justify-content-start align-items-center gap-3">
+                                    <span class="text-m-dark-grey fs-xsmall font-mono">Continue Reading - 2 min</span>
+                                    <!-- <span class="material-symbols-outlined fs-6">navigate_next</span> -->
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+                
             </div>
         </div>
     </div>

@@ -42,7 +42,8 @@
 </head>
 
 <body id="app">
-
+    <section v-if="loading" style="width: 100vw;height: 100vh;position: fixed;top: 0;z-index: 100;" class="bg-grid"></section>
+    
     <pagination aria-label="pagination"></pagination>
     <main>
         <page aria-label="page">

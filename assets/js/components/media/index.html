@@ -1,0 +1,19 @@
+<section>
+    <swiper-container spaceBetween="15" :pagination="true" :navigation="true">
+        <swiper-slide v-for="node in getImages">
+            <figure class="ratio ratio-16x9 rounded">
+                <img :src="node" :alt="node" class="object-fit-cover rounded">
+            </figure>
+        </swiper-slide>
+        <swiper-slide v-for="node in getYoutubeIds()">
+            <figure class="ratio ratio-16x9 rounded">
+                <iframe class="object-fit-cover rounded"
+                        :src="`https://www.youtube.com/embed/${node}`" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                </iframe>
+            </figure>
+        </swiper-slide>
+    </swiper-container>
+</section>

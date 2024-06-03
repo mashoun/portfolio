@@ -424,9 +424,9 @@ time {
 }
 
 blockquote{
-    padding-left: .3rem;
+    padding-left: .5rem;
     border: none;
-    border-left: 4px solid var(--m-dark-grey);
+    border-left: 4px solid var(--m-orange);
     font-family: "Roboto Mono", sans-serif;
 }
 
@@ -450,6 +450,10 @@ pre{
     direction: rtl;
 }
 
+article{
+    
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
 article > p > img {
     width: 100%;
     aspect-ratio: 16/9;
