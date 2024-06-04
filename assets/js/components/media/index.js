@@ -5,16 +5,23 @@ export default {
     data() {
         return {
             store,
-            utils
+            utils,
+            slides: {
+                index: 1,
+                length: null
+            }
         }
     },
-    props:['images','links'],
-    computed:{
-        getImages(){
+    props: ['images', 'links'],
+    computed: {
+        getImages() {
             return this.images.split(',')
         },
     },
-    methods:{
+    mounted() {
+        this.slides.length = this.getImages.length + this.getYoutubeIds().length
+    },
+    methods: {
         getYoutubeIds() {
             var links = this.links
             if (typeof (links) == 'string') links = links.split(',')
@@ -25,6 +32,19 @@ export default {
                 if (utils.getYoutubeIdShortenUrl(node)) return utils.getYoutubeIdShortenUrl(node)
                 if (utils.getYoutubeShortsId(node)) return utils.getYoutubeShortsId(node)
             }).filter(node => node != undefined)
+        },
+
+        slideNext() {
+            const swiperEl = document.querySelector('swiper-container');
+            console.log(swiperEl.swiper);
+            swiperEl.swiper.slideNext();
+            this.slides.index = swiperEl.swiper.activeIndex + 1
+        },
+        slideBack() {
+            const swiperEl = document.querySelector('swiper-container');
+            console.log(swiperEl.swiper);
+            swiperEl.swiper.slidePrev();
+            this.slides.index = swiperEl.swiper.activeIndex + 1
         },
     }
 }

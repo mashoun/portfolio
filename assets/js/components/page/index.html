@@ -1,9 +1,9 @@
-<section class="container-fluid mt-2 mb-5">
-    <div class="row justify-content-center g-3">
+<section class="container-fluid mt-2" style="margin-bottom: 15vh;">
+    <div class="row justify-content-between g-3">
         <div class="col-12 col-xl-8">
             <aside class="article-container bg-light rounded shadow-sm">
                 <!-- Header -->
-                <section class="d-flex align-items-center justify-content-between gap-2">
+                <section class="d-flex align-items-center justify-content-between gap-2 pe-2">
                     <div class="d-flex align-items-center gap-2">
                         <img src="/favicon.ico" alt="logo" class="objet-fit-cover rounded border" width="45">
                         <div class="d-flex flex-column">
@@ -11,6 +11,9 @@
                             <h2 class="text-fade font-mono fs-xsmall">Google Workspace Automation, Full Stack Web Dev & GDG Organiser.</h2>
                         </div>
                     </div>
+                    <i v-if="darkMode" class="bi bi-sun" role="button" title="Switch to Light Mode" @click="switchToDarkMode()"></i>
+                    <i v-else class="bi bi-moon-stars-fill" role="button" title="Switch to Dark Mode" @click="switchToDarkMode()"></i>
+                    
                 </section>
 
                 <!-- MEDIA -->
@@ -20,7 +23,7 @@
                 <media v-else :images="selectedPage.media" :links="selectedPage.mediaLinks"></media>
 
                 <!-- BODY -->
-                <section class="article-body">
+                <section class="article-body"  :class="{'bg-dark rounded':darkMode}">
                     <!-- Badge and Time -->
                     <div class="d-flex align-items-center gap-2">
                         <strong v-if="store.spinner" aria-label="page badge" class="rounded-pill bg-secondary" style="width: 75px;height: 10px;"></strong>
@@ -30,6 +33,7 @@
                             <span v-if="store.spinner" class="bg-secondary rounded" style="width: 75px;height: 10px;"></span>
                             <time v-else aria-label="page date" :datetime="selectedPage.timestamp">{{utilities.timo(selectedPage.timestamp)}}</time>
                         </div>
+                        
                     </div>
 
                     <!-- Titles -->
@@ -37,7 +41,7 @@
                         <span class="placeholder rounded-pill w-50" style="height: 16px;"></span>
                         <span class="placeholder rounded-pill w-25" style="height: 16px;"></span>
                     </div>
-                    <h1 v-else class="font-subtitle fs-1 text-m"><span>{{selectedPage.title}}</span> - <span>{{selectedPage.subtitle}}</span></h1>
+                    <h1 v-else class="font-subtitle fs-1" :class="{'text-light':darkMode,'text-m':!darkMode}" ><span>{{selectedPage.title}}</span> - <span>{{selectedPage.subtitle}}</span></h1>
 
                     <!-- Article -->
                     <div v-if="store.spinner"  class="d-flex flex-column gap-2 placeholder-glow">
@@ -57,18 +61,15 @@
                         <span class="placeholder rounded-pill w-100" style="height: 10px;"></span>
                         <span class="placeholder rounded-pill w-25" style="height: 10px;"></span>
                     </div>
-                    <slot v-else ></slot>
+                    <slot v-else></slot>
 
                     <!-- footer -->
                     <hr class="my-1">
                     <section class="article-footer">
-                        <span aria-label="about" role="button" title="Translate to arabic" class="d-flex gap-1 px-2 align-items-center bg-light border border-2 rounded fs-smaller">
-                            <span class="material-symbols-outlined fs-6">g_translate</span>
-                            <span class="font-mono text-lowercase">translate</span>
-                        </span>
-                        <span aria-label="about" role="button" title="Share this page" class="d-flex gap-1 px-2 align-items-center bg-light border border-2 rounded fs-smaller">
+                        
+                        <span @click="utilities.shareBy(selectedPage.title,selectedPage.url)" aria-label="about" role="button" title="Share this page" class="d-flex gap-1 px-2 align-items-center bg-light border border-2 rounded fs-smaller">
                             <span class="material-symbols-outlined fs-6">send</span>
-                            <span class="font-mono text-lowercase">send</span>
+                            <span class="font-mono text-lowercase">share</span>
                         </span>
                     </section>
                 </section>
@@ -104,12 +105,12 @@
                 
                 <aside v-if="!store.spinner" class="col-12 col-lg-6 col-xl-12 bg-light shadow-sm rounded p-2" v-for="node in suggestions">
                     <div class="row justify-content-between g-3">
-                        <div class="col-3">
+                        <div class="col-4 col-lg-3">
                             <div class="ratio ratio-16x9">
                                 <img :src="node.media.split(',')[0]" alt="img" class="object-fit-cover shadow-sm rounded">
                             </div>
                         </div>
-                        <div class="col-9">
+                        <div class="col-8 col-lg-9">
                             <div class="d-flex flex-column justify-content-between gap-2 h-100">
                                 <div class="d-flex flex-column gap-1">
                                     <!-- <div class="d-flex align-items-center gap-2">

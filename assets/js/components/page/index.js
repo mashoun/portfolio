@@ -7,14 +7,23 @@ export default {
         return {
             store,
             utilities,
+            darkMode: false
         }
     },
     computed: {
         selectedPage() {
             return new Page(this.store.pages.filter(page => page.url.includes(location.pathname))[0])
         },
-        suggestions(){
+        suggestions() {
             return this.store.pages.slice(-8).reverse()
         }
     },
+    methods: {
+        switchToDarkMode() {
+            this.darkMode = !this.darkMode
+            var article = document.querySelector('article')
+            // article.style.backgroundColor = `#0d1b2a`
+            article.style.filter = this.darkMode ? 'invert(1)' : 'invert(0)'
+        }
+    }
 }

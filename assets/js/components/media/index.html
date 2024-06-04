@@ -1,5 +1,5 @@
 <section>
-    <swiper-container spaceBetween="15" :pagination="true" :navigation="true">
+    <swiper-container spaceBetween="15">
         <swiper-slide v-for="node in getImages">
             <figure class="ratio ratio-16x9 rounded">
                 <img :src="node" :alt="node" class="object-fit-cover rounded">
@@ -16,4 +16,16 @@
             </figure>
         </swiper-slide>
     </swiper-container>
+    <p class="mt-2 text-end fs-xsmall">{{slides.index}} / {{slides.length}}</p>
+    <div class="d-flex align-items-center justify-content-center gap-2 my-3">
+        <span @click="slideBack()" aria-label="about" role="button" title="Slide back" class="d-flex gap-1 px-2 align-items-center bg-light border border-2 rounded fs-smaller">
+            <span class="material-symbols-outlined">chevron_left</span>
+            <!-- <span class="font-mono text-lowercase">back</span> -->
+        </span>
+        <span class="material-symbols-outlined">swipe</span>
+        <span @click="slideNext()" aria-label="about" role="button" title="Slide next" class="d-flex gap-1 px-2 align-items-center bg-light border border-2 rounded fs-smaller">
+            <!-- <span class="font-mono text-lowercase">next</span> -->
+            <span class="material-symbols-outlined">chevron_right</span>
+        </span>
+    </div>
 </section>
