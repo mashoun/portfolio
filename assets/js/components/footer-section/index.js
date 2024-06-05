@@ -2,70 +2,39 @@ import utilities from "../../utilities.js"
 import store from '../../store.js'
 export default {
     template: await utilities.getPage('/assets/js/components/footer-section/index.html'),
-    data() {
-        return {
+    data(){
+        return{
             store,
-            utilities,
-            links:[
+            utilities
+        }
+    },
+    computed: {
+        socialMedia() {
+            return [
+                
                 {
-                    text:'Home Page',
-                    icon:'link',
-                    url:'/'
+                    icon: 'bi bi-youtube',
+                    url: this.store.contact.youtube
                 },
                 {
-                    text:'My Projects',
-                    icon:'link',
-                    url:'/'
+                    icon: 'bi bi-whatsapp',
+                    url: this.store.contact.whatsapp
                 },
                 {
-                    text:'My Courses',
-                    icon:'school',
-                    url:'/'
+                    icon: 'bi bi-linkedin',
+                    url: this.store.contact.linkedIn
                 },
                 {
-                    text:'Collaborations & Events',
-                    icon:'event_upcoming',
-                    url:'/'
+                    icon: 'bi bi-github',
+                    url: this.store.contact.github
                 },
                 {
-                    text:'My Blogs',
-                    icon:'link',
-                    url:'/'
-                },
-                {
-                    text:'My Links',
-                    icon:'link',
-                    url:'/'
-                },
-                {
-                    text:'Terms Of Service',
-                    icon:'description',
-                    url:'/'
-                },
-                {
-                    text:'Privacy Policy',
-                    icon:'policy',
-                    url:'/'
-                },
-                {
-                    text:'Send Anonymous Message',
-                    icon:'send',
-                    url:'/'
-                },
-                {
-                    text:'Schedule New Meeting',
-                    icon:'video_call',
-                    url:'/'
-                },
-                {
-                    text:'Subscribe to my news letter',
-                    icon:'notifications',
-                    url:'/'
+                    icon: 'bi bi-envelope',
+                    url: 'mailto:' + this.store.contact.email
                 },
                 // {
-                //     text:'',
-                //     icon:'link',
-                //     url:'/'
+                //     icon: 'bi bi-',
+                //     url: ''
                 // },
             ]
         }

@@ -8,7 +8,7 @@
                     <p class="ls-1 text-m-light-grey font-normal fs-small">Google Workspace Automation, Full-Stack Web Developer & GDG Orgainser.</p>
                 </div>
                 <div class="d-flex flex-wrap gap-2 text-light opacity-75">
-                    <a v-for="node in links" :key="node" :href="node.url" class="footer-link">
+                    <a v-for="node in store.footerLinks" :key="node" :href="node.url" class="footer-link">
                         <span class="material-symbols-outlined">{{node.icon}}</span>
                         <span class="text-capitalize">{{node.text}}</span>
                     </a>
@@ -23,12 +23,7 @@
         </div>
         <div class="col-12 col-md-6 col-lg-4">
             <nav class="d-flex gap-3 justify-content-center justify-content-md-end text-light fs-5">
-                <a href="https://chat.whatsapp.com/LvyEafGdDV16bH41u3YsRP"><i class="bi bi-whatsapp"></i></a>
-                <a href="mailto:info@gdglebanon.com"><i class="bi bi-envelope"></i></a>
-                <a href="https://instagram.com/gdgcoastlebanon?igshid=MzRlODBiNWFlZA=="><i class="bi bi-instagram"></i></a>
-                <a href="https://instagram.com/gdgcoastlebanon?igshid=MzRlODBiNWFlZA=="><i class="bi bi-twitter"></i></a>
-                <a><i class="bi bi-linkedin"></i></a>
-                <a href="https://instagram.com/gdgcoastlebanon?igshid=MzRlODBiNWFlZA=="><i class="bi bi-youtube"></i></a>
+                <a v-for="node in socialMedia" :href="node.url"><i :class="node.icon"></i></a>
             </nav>
         </div>
     </div>

@@ -5,19 +5,19 @@
                 <!-- Header -->
                 <section class="d-flex align-items-center justify-content-between gap-2 pe-2">
                     <div class="d-flex align-items-center gap-2">
-                        <img src="/favicon.ico" alt="logo" class="objet-fit-cover rounded border" width="45">
-                        <div class="d-flex flex-column">
+                        <img src="/favicon.ico" alt="logo" class="objet-fit-cover rounded" width="50">
+                        <div class="d-flex flex-column gap-1">
                             <h1 class="fs-6 font-normal fw-bold">Mahmoud Mashoun</h1>
-                            <h2 class="text-fade font-mono fs-xsmall">Google Workspace Automation, Full Stack Web Dev & GDG Organiser.</h2>
+                            <h2 class="font-mono fs-xsmall">Google Workspace Automation, Full Stack Web Dev & GDG Organiser.</h2>
                         </div>
                     </div>
-                    <i v-if="darkMode" class="bi bi-sun" role="button" title="Switch to Light Mode" @click="switchToDarkMode()"></i>
-                    <i v-else class="bi bi-moon-stars-fill" role="button" title="Switch to Dark Mode" @click="switchToDarkMode()"></i>
+                    <!-- <i v-if="darkMode" class="bi bi-sun" role="button" title="Switch to Light Mode" @click="switchToDarkMode()"></i>
+                    <i v-else class="bi bi-moon-stars-fill" role="button" title="Switch to Dark Mode" @click="switchToDarkMode()"></i> -->
                     
                 </section>
 
                 <!-- MEDIA -->
-                <section v-if="store.spinner" class="article-media placeholder-glow my-3">
+                <section v-if="store.spinner" class="article-media placeholder-glow">
                     <figure class="ratio ratio-16x9 placeholder rounded"></figure>
                 </section>
                 <media v-else :images="selectedPage.media" :links="selectedPage.mediaLinks"></media>
@@ -66,7 +66,6 @@
                     <!-- footer -->
                     <hr class="my-1">
                     <section class="article-footer">
-                        
                         <span @click="utilities.shareBy(selectedPage.title,selectedPage.url)" aria-label="about" role="button" title="Share this page" class="d-flex gap-1 px-2 align-items-center bg-light border border-2 rounded fs-smaller">
                             <span class="material-symbols-outlined fs-6">send</span>
                             <span class="font-mono text-lowercase">share</span>
@@ -113,13 +112,8 @@
                         <div class="col-8 col-lg-9">
                             <div class="d-flex flex-column justify-content-between gap-2 h-100">
                                 <div class="d-flex flex-column gap-1">
-                                    <!-- <div class="d-flex align-items-center gap-2">
-                                        <strong aria-label="page badge" class="page-badge">{{node.folder}}</strong>
-                                        <time aria-label="page date" :datetime="node.timestamp">{{utilities.timo(node.timestamp)}}</time>
-                                    </div> -->
                                     <h6 class="fs-small font-mono text-capitalize text-fade-2 text-m fw-bold">
-                                        <!-- <a :href="node.url">{{node.title}}</a> -->
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab cupiditate voluptatem, voluptate, quidem vel aliquid molestiae voluptates pariatur, aliquam eaque quia excepturi iste quas magni aspernatur modi necessitatibus commodi dolores.
+                                        <a :href="node.url" :aria-label="node.title">{{node.title}}</a>
                                     </h6>
                                 </div>
                                 <a :href="node.url" class="d-flex justify-content-start align-items-center gap-3">

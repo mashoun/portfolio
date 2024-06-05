@@ -238,6 +238,9 @@
 
 
 /* IMAGE STYLES */
+.ratio-4x1{
+    aspect-ratio: 4/1;
+}
 /* IMAGE STYLES END */
 
 
@@ -378,7 +381,7 @@ nav>a:hover {
     align-items: center;
     justify-content: end;
     gap: .5rem;
-    padding-bottom: .5rem;
+    /* padding-bottom: .5rem; */
 }
 
 
