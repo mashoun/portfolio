@@ -41,7 +41,7 @@ export default {
             url: '/links/'
         },
         {
-            text: 'Send Anonymous Message',
+            text: 'Anonymous Message',
             icon: 'send',
             url: '/'
         },
