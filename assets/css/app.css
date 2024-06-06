@@ -382,6 +382,7 @@ nav>a:hover {
 /* UTILITIES END */
 
 /* PAGE STYLES */
+
 .article-container,
 .ext-container {
     display: flex;
@@ -451,12 +452,17 @@ time {
     z-index: 1;
 }
 
-blockquote{
+article > blockquote{
+    /* position: sticky; */
+    top: 37px;
+    z-index: 1;
     padding-left: .5rem;
     border: none;
     border-left: 4px solid var(--m-orange);
     font-family: "Roboto Mono", sans-serif;
+    background-color: var(--m-light);
 }
+
 
 pre{
     padding: .5rem;
