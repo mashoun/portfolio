@@ -26,14 +26,14 @@ export default {
             url: '/courses/'
         },
         {
-            text: 'Collaborations & Events',
-            icon: 'event_upcoming',
-            url: '/events/'
-        },
-        {
             text: 'My Blogs',
             icon: 'news',
             url: '/blogs/'
+        },
+        {
+            text: 'My Events',
+            icon: 'event_upcoming',
+            url: '/events/'
         },
         {
             text: 'My Links',
