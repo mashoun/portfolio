@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Workspace Automation</title>
+    <link rel="shortcut icon" href="https://lh3.googleusercontent.com/d/1jt-p1wk-ViBw3Ee4gPkOZB87fdgsOhcm" type="image/x-icon">
+    <base href="/">
+
+    <!-- SEO Tags -->
+    <meta name="title" content="Google Workspace Automation">
+    <meta name="description" content="A free coding tool that lets you automate tasks, extend functionality, and supercharge your productivity!">
+    <meta name="keywords" content="Google Apps Script, Google Workspace Automation, Google Sheets Scripting, Google Apps Script Tutorial, Free Scripting Tool">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="1 days">
+    <meta name="author" content="Google Workspace Automation">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mashoun.com/blogs/google-workspace-automation.html">
+    <meta property="og:title" content="Google Workspace Automation">
+    <meta property="og:description" content="A free coding tool that lets you automate tasks, extend functionality, and supercharge your productivity!">
+    <meta property="og:image" content="https://lh3.googleusercontent.com/d/1jt-p1wk-ViBw3Ee4gPkOZB87fdgsOhcm">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://mashoun.com/blogs/google-workspace-automation.html">
+    <meta property="twitter:title" content="Google Workspace Automation">
+    <meta property="twitter:description" content="A free coding tool that lets you automate tasks, extend functionality, and supercharge your productivity!">
+    <meta property="twitter:image" content="https://lh3.googleusercontent.com/d/1jt-p1wk-ViBw3Ee4gPkOZB87fdgsOhcm">
+
+    <!-- CSS -->
+    <link rel="shortcut icon" href="https://lh3.googleusercontent.com/d/1jt-p1wk-ViBw3Ee4gPkOZB87fdgsOhcm" type="image/x-icon">
+    <link rel="stylesheet" href="/assets/css/app.css">
+
+    <!-- JS -->
+    <script src="/assets/js/packages/vue.min.js"></script>
+
+</head>
+
+<body id="app">
+    <section v-if="loading" style="width: 100vw;height: 100vh;position: fixed;top: 0;z-index: 100;" class="bg-grid"></section>
+    
+    <pagination aria-label="pagination"></pagination>
+    <main>
+        <page aria-label="page">
+            <article><p>Do you ever feel like you've reached the limits of what Google Workspace can do for you? Are you tired of repetitive tasks or frustrated by a lack of specific features? Well, fret no more! Google Apps Script is here to be your hero.</p><p><br></p><blockquote><strong>What is Google Apps Script?</strong></blockquote><p>Apps Script is a free, cloud-based development platform that lets you write code (specifically JavaScript) to automate tasks and extend functionalities within Google Workspace. Think of it as a magic wand that unlocks a new level of power for your favorite productivity tools.</p><p><br></p><blockquote><strong>What Can You Do With Apps Script?</strong></blockquote><p>The possibilities are truly vast! Here are just a few examples:</p><ul><li><strong>Automate Repetitive Tasks:</strong> Tired of copying and pasting data between spreadsheets? Write a script to do it for you in seconds!</li><li><strong>Extend Google Sheets:</strong> Create custom functions to analyze data in unique ways or connect to external data sources.</li><li><strong>Build Custom Add-ons:</strong> Develop mini-applications that integrate seamlessly within Google Workspace, adding features specifically tailored to your needs.</li><li><strong>Automate Workflows:</strong> Trigger scripts based on events like new emails arriving in Gmail or form submissions in Google Forms.</li></ul><p><br></p><blockquote><strong>Why Use Apps Script?</strong></blockquote><p>There are many reasons to consider Apps Script:</p><ul><li><strong>Easy to Learn:</strong> Even if you're a coding novice, Apps Script uses Javascript, a popular and beginner-friendly language. Google provides plenty of tutorials and resources to get you started.</li><li><strong>Free to Use:</strong> No licensing fees or hidden costs. Apps Script is freely available to anyone with a Google Workspace account.</li><li><strong>Cloud-Based:</strong> Develop and deploy your scripts from anywhere with an internet connection. No need for complex software installations.</li><li><strong>Integrates Seamlessly:</strong> Scripts run directly within Google Workspace, so they feel like a natural extension of the tools you already use.</li></ul><p><br></p><blockquote><strong>Getting Started with Apps Script</strong></blockquote><p>Ready to unleash the power of Apps Script? Head over to the [Google Apps Script documentation](URL google apps script documentation) to get started. There you'll find a wealth of information, including tutorials, code samples, and a supportive community forum.</p><p><br></p><h5>Here's a simple Google Apps Script (GAS) code example to extract data from Google Sheets:</h5><pre class="ql-syntax" spellcheck="false">function extractSheetData() {
+&nbsp;// Get the active spreadsheet
+&nbsp;var sheet = SpreadsheetApp.getActiveSheet();
+
+&nbsp;// Get the data range (all data by default)
+&nbsp;var dataRange = sheet.getDataRange();
+
+&nbsp;// Get the values as a two-dimensional array
+&nbsp;var values = dataRange.getValues();
+
+&nbsp;// Loop through the data and log it to the console
+&nbsp;for (var i = 0; i &lt; values.length; i++) {
+&nbsp;&nbsp;var row = values[i];
+&nbsp;&nbsp;Logger.log("Row " + (i + 1) + ": " + row.join(", "));
+&nbsp;}
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><ol><li><code><strong>function extractSheetData()</strong></code><strong>:</strong> This defines a function named <code>extractSheetData</code> that will be used to extract the data.</li><li><code><strong>var sheet = SpreadsheetApp.getActiveSheet();</strong></code><strong>:</strong> This line gets the currently active spreadsheet and stores it in the <code>sheet</code> variable.</li><li><code><strong>var dataRange = sheet.getDataRange();</strong></code><strong>:</strong> This line gets the entire data range of the active sheet, which includes all the data by default. You can modify this to specify a specific range if needed.</li><li><code><strong>var values = dataRange.getValues();</strong></code><strong>:</strong> This line retrieves the values from the data range and stores them as a two-dimensional array in the <code>values</code> variable. Each inner array represents a row of data, and each element within the inner array represents a cell value in that row.</li><li><code><strong>for loop</strong></code><strong>:</strong> This loop iterates through each row in the <code>values</code> array.</li><li><code><strong>Logger.log("Row " + (i + 1) + ": " + row.join(", "));</strong></code><strong>:</strong> Inside the loop, we use the <code>Logger</code> service to log the row number (starting from 1) and the comma-separated values of each cell in that row to the script editor's log.</li></ol><p><br></p><p><strong>Running the Script:</strong></p><ol><li>Open your Google Sheet.</li><li>Go to <strong>Tools &gt; Script editor</strong>.</li><li>Copy and paste the code into the script editor window.</li><li>Save the script (<strong>File &gt; Save</strong>).</li><li>Click on the <strong>Run</strong> button and select <strong>extractSheetData</strong>.</li></ol><p><br></p><p>This will run the script and extract all the data from the active sheet, logging it to the script editor's log. You can modify the script to perform further actions with the extracted data, such as writing it to another sheet, sending it to an email, or processing it further.</p><p><br></p><blockquote><strong>Conclusion</strong></blockquote><p>Google Apps Script is a powerful tool that can transform the way you work with Google Workspace. Whether you're a seasoned coder or a complete beginner, there's something for everyone in Apps Script. So why not dive in and see what you can create?</p><p><br></p></article>
+        </page>
+    </main>
+    <footer>
+        <footer-section aria-label="footer"></footer-section>
+    </footer>
+
+    <!-- JS -->
+    <script type="module" src="/assets/js/app.js"></script>
+</body>
+
+</html>
