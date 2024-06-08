@@ -1,0 +1,17 @@
+<section class="container-fluid">
+    <div class="row g-3">
+        <div class="col-12">
+            <aside class="">
+                <div class="input-group">
+                    <input v-model="searchInput" type="text" placeholder="Search for.." class="form-control">
+                    <span class="material-symbols-outlined input-group-text">filter_list</span>
+                    <span class="material-symbols-outlined input-group-text">search</span>
+                </div>
+            </aside>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3" v-for="node in filteredPages">
+            <page-block :data="node"></page-block>
+        </div>
+    </div>
+    
+</section>

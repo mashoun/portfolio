@@ -1,0 +1,24 @@
+<aside class="p-2 pb-3 bg-light d-flex flex-column gap-3 rounded shadow-sm">
+    <figure class="ratio ratio-16x9">
+        <img :src="images[0]" alt="img" class="object-fit-cover rounded">
+    </figure>
+    <div class="d-flex flex-column gap-2">
+        <div class="d-flex align-items-center gap-2">
+            <span class="page-badge">{{data.badge}}</span>
+            <time :datetime="data.timestamp">{{utilities.timo(data.timestamp)}}</time>
+        </div>
+        <a :href="data.url"><h5 class="fs-6 font-mono fw-bold text-m text-fade-2 text-capitalize" style="min-height: 38.4px;">{{data.title}} <span v-if="data.subtitle.trim() != ''">- {{data.subtitle}}</span></h5></a>
+        <!-- <div class="border-start border-4 border-secondary ps-2 font-mono text-dark fs-small text-fade">{{data.subtitle}}</div> -->
+        <p class="text-m-dark-grey fs-small text-fade-3 font-normal" style="min-height:63px;">{{data.description}}</p>
+        <div class="d-flex flex-wrap gap-1 align-items-center" style="min-height: 37.2px; overflow: hidden !important;">
+            <span class="px-2 fs-xsmall border rounded font-normal fw-bold text-lowercase" v-for="tag in keywords">#{{tag}}</span>
+        </div>
+    </div>
+    <hr class="my-0 py-0">
+    <a :href="data.url">
+        <div class="d-flex justify-content-between align-items-center gap-3">
+            <span class="text-m-dark-grey fs-xsmall font-mono">Continue Reading</span>
+            <span class="material-symbols-outlined fs-6">navigate_next</span>
+        </div>
+    </a>
+</aside>

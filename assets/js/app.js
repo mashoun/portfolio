@@ -51,6 +51,12 @@ app.component('pagination', pagination)
 import page from './components/page/index.js'
 app.component('page', page)
 
+import pageBlock from './components/page-block/index.js'
+app.component('page-block', pageBlock)
+
+import pageList from './components/page-list/index.js'
+app.component('page-list', pageList)
+
 import pageSection from './components/page-section/index.js'
 app.component('page-section', pageSection)
 

@@ -9,8 +9,7 @@
 
     <!-- SEO Tags -->
     <meta name="title" content="Mahmoud Mashoun">
-    <meta name="description" content="Full Stack Web Developer, GDG Organiser & Google Workspace Automation Expert.It's not about writing many lines of code to solve a problem, It's all about doing it in
-    less time & cost.">
+    <meta name="description" content="Google Workspace Automation, Full Stack Web Developer & GDG Organiser">
     <meta name="keywords"
         content="lebanon,google apps script,vue js,vuegle stack,google developer in lebanon,google developer in mena region,lebanese developer">
     <meta name="robots" content="index, follow">
@@ -24,7 +23,7 @@
     <meta property="og:url" content="https://mashoun.com">
     <meta property="og:title" content="Mahmoud Mashoun">
     <meta property="og:description"
-        content="Full Stack Web Developer, GDG Organiser & Google Workspace Automation Expert.">
+        content="Google Workspace Automation, Full Stack Web Developer & GDG Organiser">
     <meta property="og:image" content="favicon.ico">
 
     <!-- Twitter -->
@@ -32,7 +31,7 @@
     <meta property="twitter:url" content="https://mashoun.com">
     <meta property="twitter:title" content="Mahmoud Mashoun">
     <meta property="twitter:description"
-        content="Full Stack Web Developer, GDG Organiser & Google Workspace Automation Expert.">
+        content="Google Workspace Automation, Full Stack Web Developer & GDG Organiser">
     <meta property="twitter:image" content="favicon.ico">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
@@ -40,24 +39,21 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/assets/css/app.css">
 
-
     <!-- JS -->
     <script src="/assets/js/packages/vue.min.js"></script>
 
 </head>
 
 <body id="app">
+    <section v-if="loading" style="width: 100vw;height: 100vh;position: fixed;top: 0;z-index: 100;" class="bg-grid"></section>
     <navbar></navbar>
-    <main class=" py-3 d-flex flex-column gap-3 mb-5">
+    <main>
         <hero-section></hero-section>
-        <counter-section></counter-section>
-        <page-section title="My Projects" to="/projects/"></page-section>
-        <page-section title="My Courses" to="/courses/"></page-section>
-        <page-section title="My Blogs" to="/blogs/"></page-section>
+        <page-section title="My Projects" path="/projects/"></page-section>
+        <page-section title="My Courses" path="/courses/"></page-section>
+        <page-section title="My Blogs" path="/blogs/"></page-section>
     </main>
-    <footer>
-        <footer-section></footer-section>
-    </footer>
+    <footer-section></footer-section>
 
     <!-- JS -->
     <script type="module" src="/assets/js/app.js"></script>

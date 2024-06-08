@@ -2,7 +2,7 @@
     <swiper-container spaceBetween="15">
         <swiper-slide v-for="node in getImages">
             <figure class="ratio ratio-16x9 rounded">
-                <img :src="node" :alt="node" class="object-fit-cover rounded">
+                <img :src="node" :alt="node" class="object-fit-cover rounded border">
             </figure>
         </swiper-slide>
         <swiper-slide v-for="node in getYoutubeIds()">
