@@ -14,7 +14,7 @@ export default {
             return this.data.media.split(',')
         },
         keywords(){
-            var arr = this.data.keywords.slice(0,150).split(',')
+            var arr = this.data.keywords.slice(0,75).split(',')
             return arr.slice(0,arr.length - 1).map(tag => tag.trim().replaceAll(' ','_'))
         }
     }

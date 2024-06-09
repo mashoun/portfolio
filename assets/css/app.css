@@ -359,16 +359,14 @@ nav>a:hover {
     width: 50%;
 }
 
-.searchbar-sticky{
-    position: sticky;
-    top: calc(0px);
-    z-index: 10;
-}
-
 .offcanvas-bottom {
     height: 50vh !important;
 }
 
+.form-control::placeholder{
+    
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
 /* width */
 ::-webkit-scrollbar {
     width: 5px;

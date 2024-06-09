@@ -9,7 +9,43 @@
                 </aside>
             </a>
         </div>
-        <div class="col-12">
+        <div class="col-12" v-if="store.spinner">
+            <swiper-container :pagination="{clickable:true}" :spaceBetween="10" :breakpoints="swiperBreakpoints">
+                <swiper-slide v-for="node in ['','','','','','']">
+                    <aside class="p-2 pb-3 bg-light d-flex flex-column gap-3 rounded shadow-sm">
+                        <section class="article-media placeholder-glow">
+                            <figure class="ratio ratio-16x9 placeholder rounded"></figure>
+                        </section>
+                        <div class="d-flex flex-column gap-2">
+                            <div class="d-flex align-items-center gap-2 placeholder-glow">
+                                <strong aria-label="page badge" class="rounded-pill bg-secondary w-25" style="height: 7px;"></strong>
+                            </div>
+                            <div class="d-flex flex-column gap-2 placeholder-glow my-1">
+                                <span class="placeholder rounded-pill w-100" style="height: 12px;"></span>
+                                <span class="placeholder rounded-pill w-50" style="height: 12px;"></span>
+                            </div>
+                            <div class="d-flex flex-column gap-2 placeholder-glow">
+                                <span class="placeholder rounded-pill w-100" style="height: 7px;"></span>
+                                <span class="placeholder rounded-pill w-100" style="height: 7px;"></span>
+                                <span class="placeholder rounded-pill w-100" style="height: 7px;"></span>
+                                <span class="placeholder rounded-pill w-100" style="height: 7px;"></span>
+                                <span class="placeholder rounded-pill w-100" style="height: 7px;"></span>
+                                <span class="placeholder rounded-pill w-100" style="height: 7px;"></span>
+                                <span class="placeholder rounded-pill w-100" style="height: 7px;"></span>
+                                <span class="placeholder rounded-pill w-75" style="height: 7px;"></span>
+                            </div>
+        
+                        </div>
+                        <hr class="my-0 py-0">
+                        <div class="d-flex justify-content-between align-items-center gap-3">
+                            <span class="placeholder rounded-pill w-25" style="height: 7px;"></span>
+                            <span class="material-symbols-outlined fs-6">navigate_next</span>
+                        </div>
+                    </aside>
+                </swiper-slide>
+            </swiper-container>
+        </div>
+        <div v-else class="col-12">
             <swiper-container :pagination="{clickable:true}" :spaceBetween="10" :breakpoints="swiperBreakpoints">
                 <swiper-slide v-for="node in pages">
                     <page-block :data="node"></page-block>

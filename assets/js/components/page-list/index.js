@@ -13,21 +13,28 @@ export default {
     computed:{
         pages(){
             
-            if(this.path == '/blogs/'){
+            if(this.path == 'blogs'){
                 return this.store.pages.filter(page => page.folder.includes('blogs'))
             }
 
-            if(this.path == '/projects/'){
+            if(this.path == 'projects'){
                 return this.store.pages.filter(page => page.folder.includes('projects'))
             }
 
-            if(this.path == '/courses/'){
+            if(this.path == 'courses'){
                 return this.store.pages.filter(page => page.folder.includes('courses'))
             }
             
         },
         filteredPages(){
-            return this.pages.filter( page => page.title.toLowerCase().includes(this.searchInput.toLowerCase()))
+            return this.pages.filter( page => {
+                return page.title.toLowerCase().trim().includes(this.searchInput.toLowerCase()) || 
+                page.subtitle.toLowerCase().trim().includes(this.searchInput.toLowerCase()) || 
+                page.badge.toLowerCase().trim().includes(this.searchInput.toLowerCase()) || 
+                page.keywords.toLowerCase().trim().includes(this.searchInput.toLowerCase()) || 
+                page.description.toLowerCase().trim().includes(this.searchInput.toLowerCase()) || 
+                page.url.toLowerCase().trim().includes(this.searchInput.toLowerCase())
+            })
         }
     }
 
