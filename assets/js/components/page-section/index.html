@@ -2,12 +2,10 @@
     <div class="row justify-content-between g-3">
 
         <div class="col-12 col-lg-12 position-sticky" style="top: 61.5px; z-index: 2;">
-            <a :href="path" :title="'Navigate to '+ path">
-                <aside class="p-2 bg-grad-light rounded text-center d-flex justify-content-center align-items-center gap-2">
-                    <strong class="font-subtitle fs-4">{{title}}</strong>
-                    <!-- <i class="bi bi-chevron-right"></i> -->
-                </aside>
-            </a>
+            <aside class="p-2 bg-grad-light rounded text-center d-flex justify-content-center align-items-center gap-2">
+                <strong class="font-subtitle fs-4">{{title}}</strong>
+                <!-- <i class="bi bi-chevron-right"></i> -->
+            </aside>
         </div>
         <div class="col-12" v-if="store.spinner">
             <swiper-container :pagination="{clickable:true}" :spaceBetween="10" :breakpoints="swiperBreakpoints">

@@ -9,6 +9,9 @@
     #sidebar {
         width: 85% !important;
     }
+    .searchbar{
+        width: 100% !important;
+    }
 
 }
 
@@ -20,12 +23,20 @@
     #sidebar{
         width: 75% !important;
     }
+    
+    .searchbar{
+        width: 100% !important;
+    }
 
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
     /* Your CSS styles for medium devices here */
+    
+    .searchbar{
+        width: 100% !important;
+    }
 }
 
 /* Large devices (desktops, 992px and up) */

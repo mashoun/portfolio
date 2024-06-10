@@ -1,0 +1,32 @@
+<section class="container-fluid d-flex flex-column gap-3">
+    <div class="row g-2" v-if="store.spinner">
+        <div class="col-12 col-lg-4 placeholder-glow">
+            <aside class="bg-light rounded p-2 d-flex border gap-2 align-items-center">
+                <span class="material-symbols-outlined text-primary">link</span>
+                <span class="spinner-line"></span>
+            </aside>
+        </div>
+        <div class="col-12 col-lg-4 placeholder-glow">
+            <aside class="bg-light rounded p-2 d-flex border gap-2 align-items-center">
+                <span class="material-symbols-outlined text-primary">link</span>
+                <span class="spinner-line"></span>
+            </aside>
+        </div>
+        <div class="col-12 col-lg-4 placeholder-glow">
+            <aside class="bg-light rounded p-2 d-flex border gap-2 align-items-center">
+                <span class="material-symbols-outlined text-primary">link</span>
+                <span class="spinner-line"></span>
+            </aside>
+        </div>
+    </div>
+    <div v-else class="row g-2">
+        <div v-for="node in store.links" class="col-12 col-lg-4">
+            <a :href="node.url">
+                <aside class="bg-light rounded p-2 d-flex border gap-2 align-items-center">
+                    <span class="material-symbols-outlined text-primary">link</span>
+                    <p class="font-normal fs-small text-dark text-fade">{{node.title}}</p>
+                </aside>
+            </a>
+        </div>
+    </div>
+</section>
