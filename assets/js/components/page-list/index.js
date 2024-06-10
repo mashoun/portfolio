@@ -24,6 +24,11 @@ export default {
             if(this.path == 'courses'){
                 return this.store.pages.filter(page => page.folder.includes('courses'))
             }
+
+            if(this.path == 'events'){
+                return this.store.pages.filter(page => page.folder.includes('events'))
+            }
+
             
         },
         filteredPages(){
