@@ -46,11 +46,19 @@
         <a href="/links/" :class="{'fw-bold text-primary': location.pathname == '/links/'}">Links</a>
     </nav>
     <section class="d-none d-lg-block">
-        <a href="/meeting/">
-            <button data-bs-toggle="offcanvas" data-bs-target="#meetingSidebar" class="btn btn-sm btn-primary d-flex align-items-center gap-1">
-                <span class="material-symbols-outlined fs-5">video_call</span>
-                <span class="font-normal text-nowrap">Schedule a Meeting</span>
-            </button>
-        </a>
+        <button data-bs-toggle="offcanvas" data-bs-target="#meetingSidebar" class="btn btn-sm btn-primary d-flex align-items-center gap-1">
+            <span class="material-symbols-outlined fs-5">video_call</span>
+            <span class="font-normal text-nowrap">Schedule a Meeting</span>
+        </button>
+        <aside class="offcanvas offcanvas-end" data-bs-scroll="true" id="meetingSidebar">
+            <div class="offcanvas-header">
+                
+                <h5 class="offcanvas-title font-title fs-5">Schedule a meeting</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+            <div class="offcanvas-body">
+                <new-meeting></new-meeting>
+            </div>
+        </aside>
     </section>
 </header>

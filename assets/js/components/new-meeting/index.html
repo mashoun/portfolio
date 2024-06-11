@@ -1,0 +1,41 @@
+<section class="d-flex flex-column gap-2">
+  <div class="form-floating">
+    <input v-model="nextMeeting.title" type="text" class="form-control" id="meetingTopic"
+      placeholder="Topic you want to discuss">
+    <label for="meetingTopic">Topic you want to discuss</label>
+  </div>
+  <div class="form-floating">
+    <input v-model="nextMeeting.name" type="text" class="form-control" id="meetingName" placeholder="Enter your name">
+    <label for="meetingName">Enter your name</label>
+  </div>
+  <div class="form-floating">
+    <input v-model="nextMeeting.email" type="email" class="form-control" id="meetingEmail"
+      placeholder="Enter your email">
+    <label for="meetingEmail">Enter your email</label>
+  </div>
+
+  <div class="form-floating">
+    <select v-model="selectedDate" class="form-select font-normal" id="floatingSelectDate">
+      <option :value="node" v-for="node in nextDays">{{node.day}} {{node.date}}</option>
+    </select>
+    <label for="floatingSelectDate">Select the Date</label>
+  </div>
+  <div v-if="selectedDate.day != ''" class="form-floating">
+    <select v-model="nextMeeting.time" class="form-select font-normal" id="floatingSelectTime">
+      <option :value="node" v-for="node in getNextTime()">{{node}}</option>
+    </select>
+    <label for="floatingSelectTime">Select the Time</label>
+  </div>
+
+  <button @click="newMeeting()" :disabled="!isValidForm.status || spinner" class="btn btn-sm btn-primary font-normal">
+    <span>Submit</span>
+  </button>
+  
+  <span v-show="spinner" class="spinner-line"></span>
+
+  <p class="fs-xxsmall font-normal text-center my-3">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem dolore assumenda quia ad facilis fugiat eum non
+    asperiores. Veniam, placeat.
+  </p>
+</section>
+

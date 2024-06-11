@@ -17794,9 +17794,75 @@ function directory() {
     }
 }
 
+function getUpcomingDays(n) {
+    const upcomingDays = [];
+    const today = new Date();
 
+    for (let i = 1; i <= n; i++) {
+        const upcomingDate = new Date(today.getTime() + (i * 24 * 60 * 60 * 1000)); // Add days in milliseconds
+        const day = upcomingDate.toLocaleDateString('en-US', { weekday: 'short' }); // Get short weekday name
+        const dateString = upcomingDate.toISOString().slice(0, 10); // Format date as YYYY-MM-DD
+
+        upcomingDays.push({
+            day,
+            date: dateString,
+        });
+    }
+
+    return upcomingDays;
+}
+
+function getTimeRange(timeRange) {
+    // Split the time range into start and end times
+    const [startTime, endTime] = timeRange.split("-");
+
+    // Convert start and end times to arrays of [hour, minute]
+    const start = startTime.split(":").map(Number);
+    const end = endTime.split(":").map(Number);
+
+    // Initialize variables to track current time
+    let currentHour = start[0];
+    let currentMinute = start[1];
+
+    const timeList = [];
+
+    // Loop until the end time is reached (excluding the last 30 minutes)
+    while (currentHour < end[0] || (currentHour === end[0] && currentMinute <= end[1] - 30)) {
+        // Add formatted time string to the list
+        timeList.push(`${currentHour.toString().padStart(2, "0")}:${currentMinute.toString().padStart(2, "0")}`);
+
+        // Increment minutes by 5
+        currentMinute += 10;
+
+        // Handle overflow (minutes going past 59)
+        if (currentMinute >= 60) {
+            currentHour++;
+            currentMinute = 0;
+        }
+    }
+
+    return timeList;
+}
+
+function getTimeRanges(timeRangesStr) {
+    const allTimeRanges = [];
+
+    // Split the time ranges string into individual ranges
+    const timeRanges = timeRangesStr.split(",");
+
+    // Loop through each time range
+    for (const timeRange of timeRanges) {
+        const times = getTimeRange(timeRange.trim()); // Call the helper function
+        allTimeRanges.push(times);
+    }
+
+    return allTimeRanges;
+}
 
 export default {
+    getTimeRange,
+    getTimeRanges,
+    getUpcomingDays,
     directory,
     getSymbols,
     copi,

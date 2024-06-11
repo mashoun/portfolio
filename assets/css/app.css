@@ -57,6 +57,9 @@
     user-select: none !important;
 }
 
+.w-fit{
+    width: fit-content;
+}
 /* TEXT STYLES */
 .font-title {
     font-family: "Poppins", sans-serif;
@@ -527,4 +530,63 @@ article > p > a {
     font-family: "Roboto Mono", sans-serif;
     font-size: small;
     text-decoration: underline;
+}
+
+/* Notify */
+.allo-section{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background: rgba(107, 107, 107, 0.3);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.allo-aside{
+    width: 25%;
+    padding-top: 1rem;
+    background-color: whitesmoke;
+    border-radius: 1.3rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    /* box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) !important; */
+}
+
+.allo-title{
+    text-transform: capitalize;
+    color: #0d1b2a;
+    font-weight: bolder;
+    padding: 0rem 1rem;
+    text-align: center;
+}
+
+.allo-message{
+    
+    text-transform: lowercase;
+    color: #19456B;
+    padding: .2rem 1rem;
+    font-size: small;
+    text-align: center;
+}
+
+.allo-button{
+    width: 100%;
+    padding: .7rem 0px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-top: 1px solid #adb5bd;
+    color: #009efd;
+    font-weight: bold;
 }

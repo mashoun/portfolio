@@ -5,10 +5,11 @@ export default {
     devmode: false,
     spinner: false,
     loading: true,
-    api: 'https://script.google.com/macros/s/AKfycbwzczwFMkU-ZQxbvp5guR7zcrRLexcutAIlwjI8bUuAzvSMCmbLzrmWU_X3aDhy-ePx/exec',
+    api: 'https://script.google.com/macros/s/AKfycbzt2PtEJs27xT0QC3MT5eXyJ7In06g4mCtbBx74dE6CX2qaMb-GYjGXL71tsV12C9pn/exec',
     pages: [],
     contact: {},
     links: [],
+    schedule: [],
     footerLinks: [
         {
             text: 'Home Page',
@@ -31,7 +32,7 @@ export default {
             url: '/blogs/'
         },
         {
-            text: 'My Events',
+            text: 'Collaborations & Events',
             icon: 'event_upcoming',
             url: '/events/'
         },
@@ -40,21 +41,21 @@ export default {
             icon: 'link',
             url: '/links/'
         },
-        {
-            text: 'Anonymous Message',
-            icon: 'send',
-            url: '/'
-        },
-        {
-            text: 'Schedule a Meeting',
-            icon: 'video_call',
-            url: '/meeting/'
-        },
-        {
-            text: 'Subscribe',
-            icon: 'notifications',
-            url: '/'
-        },
+        // {
+        //     text: 'Anonymous Message',
+        //     icon: 'send',
+        //     url: '/'
+        // },
+        // {
+        //     text: 'Schedule a Meeting',
+        //     icon: 'video_call',
+        //     url: '/meeting/'
+        // },
+        // {
+        //     text: 'Subscribe',
+        //     icon: 'notifications',
+        //     url: '/'
+        // },
         {
             text: 'Terms Of Service',
             icon: 'description',

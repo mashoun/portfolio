@@ -12,6 +12,9 @@
     .searchbar{
         width: 100% !important;
     }
+    .allo-aside{
+        width: 90% !important;
+    }
 
 }
 
@@ -27,6 +30,10 @@
     .searchbar{
         width: 100% !important;
     }
+    
+    .allo-aside{
+        width: 70% !important;
+    }
 
 }
 
@@ -36,6 +43,10 @@
     
     .searchbar{
         width: 100% !important;
+    }
+    
+    .allo-aside{
+        width: 50% !important;
     }
 }
 
