@@ -258,10 +258,7 @@
 /* ELEMENTS STYLES */
 
 body {
-    /* background: var(--gradient-background);
-    background-repeat: no-repeat; */
-
-
+    
     background-image: linear-gradient(#ededf6 0.5px, transparent 0.5px), linear-gradient(to right, #ededf6 0.5px, transparent 0.5px);
     background-size: 25px 25px;
     background-color: #ffffff;
@@ -271,8 +268,8 @@ main{
     min-height: 50vh;
     display: flex;
     flex-direction: column;
-    gap: 100px;
-    padding-top: 1rem;
+    gap: 75px;
+    padding-top: .8rem;
     padding-bottom: 100px;
 }
 
@@ -431,8 +428,7 @@ nav>a:hover {
 .article-footer {
     display: flex;
     align-items: center;
-    justify-content: end;
-    gap: .5rem;
+    justify-content: space-between;
     /* padding-bottom: .5rem; */
 }
 

@@ -92,3 +92,29 @@
         transform: scale(1);
     }
 }
+
+
+.skeleton {
+    -webkit-animation: skeleton .5s linear infinite alternate both;
+    animation: skeleton .5s linear infinite alternate both;
+}
+
+@-webkit-keyframes skeleton {
+    0% {
+        background: #dee2e6;
+    }
+
+    to {
+        background: #adb5bd;
+    }
+}
+
+@keyframes skeleton {
+    0% {
+        background: #dee2e6;
+    }
+
+    to {
+        background: #adb5bd;
+    }
+}

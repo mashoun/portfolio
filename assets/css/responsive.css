@@ -27,7 +27,7 @@
 
     /* Your CSS styles for small devices here */
     
-    #sidebar,#meetingSidebar{
+    #sidebar,#meetingSidebar,#footerMeetingSidebar{
         width: 75% !important;
     }
     
