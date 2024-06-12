@@ -5,7 +5,9 @@ export default {
     data() {
         return {
             store,
-            utilities
+            utilities,
+            heroLinks:'',
+            heroImages:'https://picsum.photos/1080,https://picsum.photos/1081,https://picsum.photos/1082'
         }
     }
 }

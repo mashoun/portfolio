@@ -606,3 +606,8 @@ article > p > a {
     background-color: #ffffff;
 
 }
+
+.ratio-lg{
+    aspect-ratio: 12/3;
+}
+

@@ -5,7 +5,7 @@
     /* .navbar-logo {
         width: 30px;
     } */
-
+    
     #sidebar,#meetingSidebar {
         width: 85% !important;
     }
@@ -15,6 +15,10 @@
     .allo-aside{
         width: 90% !important;
     }
+    .ratio-lg{
+        aspect-ratio: 16/9 !important;
+    }
+
 
 }
 
@@ -33,6 +37,10 @@
     
     .allo-aside{
         width: 70% !important;
+    }
+    
+    .ratio-lg{
+        aspect-ratio: 16/9 !important;
     }
 
 }
