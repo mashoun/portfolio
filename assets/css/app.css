@@ -590,3 +590,19 @@ article > p > a {
     color: #009efd;
     font-weight: bold;
 }
+
+.network-error-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 200;
+    
+    background-image: linear-gradient(#ededf6 0.5px, transparent 0.5px), linear-gradient(to right, #ededf6 0.5px, transparent 0.5px);
+    background-size: 25px 25px;
+    background-color: #ffffff;
+
+}

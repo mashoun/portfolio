@@ -5,6 +5,7 @@ export default {
     devmode: false,
     spinner: false,
     loading: true,
+    networkError: false,
     api: 'https://script.google.com/macros/s/AKfycbzt2PtEJs27xT0QC3MT5eXyJ7In06g4mCtbBx74dE6CX2qaMb-GYjGXL71tsV12C9pn/exec',
     pages: [],
     contact: {},
@@ -32,14 +33,14 @@ export default {
             url: '/blogs/'
         },
         {
-            text: 'Collaborations & Events',
-            icon: 'event_upcoming',
-            url: '/events/'
-        },
-        {
             text: 'My Links',
             icon: 'link',
             url: '/links/'
+        },
+        {
+            text: 'Collaborations & Events',
+            icon: 'event_upcoming',
+            url: '/events/'
         },
         // {
         //     text: 'Anonymous Message',

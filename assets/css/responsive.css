@@ -6,7 +6,7 @@
         width: 30px;
     } */
 
-    #sidebar {
+    #sidebar,#meetingSidebar {
         width: 85% !important;
     }
     .searchbar{
@@ -23,7 +23,7 @@
 
     /* Your CSS styles for small devices here */
     
-    #sidebar{
+    #sidebar,#meetingSidebar{
         width: 75% !important;
     }
     

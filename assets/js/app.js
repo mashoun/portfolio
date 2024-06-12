@@ -9,6 +9,8 @@ import Link from './classes/Link.js'
 import Schedule from './classes/Schedule.js'
 import Allo from './classes/Allo.js'
 
+
+
 const app = Vue.createApp({
     data() {
         return {
@@ -32,16 +34,34 @@ const app = Vue.createApp({
             }).catch(err => {
                 this.store.spinner = false
                 console.log(err);
-                new Allo('Weak Network ❌🛜', err).run()
-                location.reload()
+                // new Allo('Weak Network ❌🛜', "Looks like you're offline. Please check your internet connection and try again.").run()
+                // location.reload()
+                this.store.networkError = true
             })
         }
     },
     mounted() {
+        window.addEventListener('offline', () => {
+            console.log('Weak network or offline.');
+            // Display warning message, disable network-dependent features
+            // new Allo('Weak Network ❌🛜', "Looks like you're offline. Please check your internet connection and try again.").run()
+            this.store.networkError = true
+        });
+        
+        window.addEventListener('online', () => {
+            console.log('Network connection restored.');
+            // Update UI or perform actions based on online status
+            this.store.networkError = false
+            location.reload()
+        });
+
         this.store.loading = false
         this.getProfile()
     }
 })
+
+import networkError from './components/network-error/index.js'
+app.component('network-error', networkError)
 
 import navbar from './components/navbar/index.js'
 app.component('navbar', navbar)

@@ -29,6 +29,14 @@
                         <span class="material-symbols-outlined text-secondary">{{node.icon}}</span>
                         <span class="text-capitalize">{{node.text}}</span>
                     </a>
+                    <a :href="store.contact.waChannel" class="sidebar-link border border-1 border-dark">
+                        <span class="material-symbols-outlined text-secondary">notifications_active</span>
+                        <span class="text-capitalize">Subscribe</span>
+                    </a>
+                    <span data-bs-toggle="offcanvas" data-bs-target="#meetingSidebar" role="button" class="sidebar-link border border-1 border-dark">
+                        <span class="material-symbols-outlined text-secondary">video_call</span>
+                        <span class="text-capitalize">Schedule a Meeting</span>
+                    </span>
                 </div>
                 <div class="d-flex justify-content-center align-items-center gap-3 fs-5 text-m-dark">
                     <a v-for="node in socialMedia" :href="node.url"><i :class="node.icon "></i></a>
@@ -45,20 +53,18 @@
         <a href="/blogs/" :class="{'fw-bold text-primary': location.pathname == '/blogs/'}">Blogs</a>
         <a href="/links/" :class="{'fw-bold text-primary': location.pathname == '/links/'}">Links</a>
     </nav>
-    <section class="d-none d-lg-block">
-        <button data-bs-toggle="offcanvas" data-bs-target="#meetingSidebar" class="btn btn-sm btn-primary d-flex align-items-center gap-1">
-            <span class="material-symbols-outlined fs-5">video_call</span>
-            <span class="font-normal text-nowrap">Schedule a Meeting</span>
-        </button>
-        <aside class="offcanvas offcanvas-end" data-bs-scroll="true" id="meetingSidebar">
-            <div class="offcanvas-header">
-                
-                <h5 class="offcanvas-title font-title fs-5">Schedule a meeting</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-              </div>
-            <div class="offcanvas-body">
-                <new-meeting></new-meeting>
-            </div>
-        </aside>
-    </section>
+    <button data-bs-toggle="offcanvas" data-bs-target="#meetingSidebar" class="d-none d-lg-flex btn btn-sm btn-primary align-items-center gap-1">
+        <span class="material-symbols-outlined fs-5">video_call</span>
+        <span class="font-normal text-nowrap">Schedule a Meeting</span>
+    </button>
+    <aside class="offcanvas offcanvas-end" data-bs-scroll="true" id="meetingSidebar">
+        <div class="offcanvas-header">
+            
+            <h5 class="offcanvas-title font-title fs-5">Schedule a meeting</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+        <div class="offcanvas-body">
+            <new-meeting></new-meeting>
+        </div>
+    </aside>
 </header>

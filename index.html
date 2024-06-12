@@ -54,6 +54,7 @@
         <page-section title="My Blogs" path="/blogs/"></page-section>
     </main>
     <footer-section></footer-section>
+    <network-error v-if="store.networkError"></network-error>
 
     <!-- JS -->
     <script type="module" src="/assets/js/app.js"></script>

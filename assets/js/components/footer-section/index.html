@@ -13,6 +13,25 @@
                             <span class="material-symbols-outlined">{{node.icon}}</span>
                             <span class="text-capitalize">{{node.text}}</span>
                         </a>
+                        <a :href="store.contact.waChannel" class="footer-link">
+                            <span class="material-symbols-outlined">notifications_active</span>
+                            <span class="text-capitalize">Subscribe</span>
+                        </a>
+                        <span data-bs-toggle="offcanvas" data-bs-target="#footerMeetingSidebar" class="footer-link" role="button">
+                            <span class="material-symbols-outlined">video_call</span>
+                            <span class="text-capitalize">Schedule a Meeting</span>
+                        </span>
+                    </div>
+                </aside>
+                
+                <aside class="offcanvas offcanvas-end" data-bs-scroll="true" id="footerMeetingSidebar">
+                    <div class="offcanvas-header">
+                        
+                        <h5 class="offcanvas-title font-title fs-5">Schedule a meeting</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <new-meeting></new-meeting>
                     </div>
                 </aside>
             </div>

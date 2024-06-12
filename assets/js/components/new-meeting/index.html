@@ -1,16 +1,16 @@
 <section class="d-flex flex-column gap-2">
   <div class="form-floating">
-    <input v-model="nextMeeting.title" type="text" class="form-control" id="meetingTopic"
-      placeholder="Topic you want to discuss">
+    <input @keyup.enter="utilities.focus('meetingName')" v-model="nextMeeting.title" type="text" class="form-control" id="meetingTopic"
+      placeholder="Topic you want to discuss" autocomplete="off">
     <label for="meetingTopic">Topic you want to discuss</label>
   </div>
   <div class="form-floating">
-    <input v-model="nextMeeting.name" type="text" class="form-control" id="meetingName" placeholder="Enter your name">
+    <input @keyup.enter="utilities.focus('meetingEmail')" v-model="nextMeeting.name" type="text" class="form-control" id="meetingName" placeholder="Enter your name" autocomplete="off">
     <label for="meetingName">Enter your name</label>
   </div>
   <div class="form-floating">
-    <input v-model="nextMeeting.email" type="email" class="form-control" id="meetingEmail"
-      placeholder="Enter your email">
+    <input @keyup.enter="utilities.focus('floatingSelectDate')" v-model="nextMeeting.email" type="email" class="form-control" id="meetingEmail"
+      placeholder="Enter your email" autocomplete="on">
     <label for="meetingEmail">Enter your email</label>
   </div>
 
