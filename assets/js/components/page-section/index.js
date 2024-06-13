@@ -32,15 +32,15 @@ export default {
         pages(){
             
             if(this.path == '/blogs/'){
-                return this.store.pages.filter(page => page.folder.includes('blogs'))
+                return this.store.pages.filter(page => page.folder.includes('blogs')).slice(0,7)
             }
 
             if(this.path == '/projects/'){
-                return this.store.pages.filter(page => page.folder.includes('projects'))
+                return this.store.pages.filter(page => page.folder.includes('projects')).slice(0,7)
             }
 
             if(this.path == '/courses/'){
-                return this.store.pages.filter(page => page.folder.includes('courses'))
+                return this.store.pages.filter(page => page.folder.includes('courses')).slice(0,7)
             }
             
         }

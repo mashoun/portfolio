@@ -39,11 +39,11 @@
                     </div>
 
                     <!-- Titles -->
-                    <div v-if="store.spinner" class="d-flex align-items-center gap-2 placeholder-glow my-3">
+                    <div v-if="store.spinner" class="d-flex align-items-center gap-2 placeholder-glow my-1">
                         <span class="placeholder rounded-pill w-50" style="height: 16px;"></span>
                         <span class="placeholder rounded-pill w-25" style="height: 16px;"></span>
                     </div>
-                    <h1 v-else class="font-subtitle fs-1" :class="{'text-light':darkMode,'text-m':!darkMode}" ><span>{{selectedPage.title}}</span> - <span>{{selectedPage.subtitle}}</span></h1>
+                    <h1 v-else class="font-title fs-3 mb-2" :class="{'text-light':darkMode,'text-m':!darkMode}" ><span>{{selectedPage.title}}</span> - <span>{{selectedPage.subtitle}}</span></h1>
 
                     <!-- Article -->
                     <div v-if="store.spinner"  class="d-flex flex-column gap-2 placeholder-glow">
@@ -90,7 +90,7 @@
             <div class="row g-3">
                 <div class="col-12 sticky-part position-sticky">
                     <aside class="p-2 bg-grad-light rounded text-center d-flex justify-content-center align-items-center gap-2">
-                        <strong class="font-subtitle fs-4">You might also like</strong>
+                        <strong class="font-normal fs-small fw-bold text-m-dark">Suggested for you</strong>
                     </aside>
                     
                 </div>

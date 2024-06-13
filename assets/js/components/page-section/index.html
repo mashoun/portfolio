@@ -3,7 +3,7 @@
 
         <div class="col-12 col-lg-12 position-sticky" style="top: 61.5px; z-index: 2;">
             <aside class="p-2 bg-grad-light rounded text-center d-flex justify-content-center align-items-center gap-2">
-                <strong class="font-mono text-m-dark">{{title}}</strong>
+                <strong class="font-normal fs-small fw-bold text-m-dark">#{{title}}</strong>
             </aside>
         </div>
         <div class="col-12" v-if="store.spinner">
@@ -46,6 +46,14 @@
             <swiper-container :pagination="{clickable:true}" :spaceBetween="10" :breakpoints="swiperBreakpoints">
                 <swiper-slide v-for="node in pages">
                     <page-block :data="node"></page-block>
+                </swiper-slide>
+                <swiper-slide style="height: auto !important;">
+                    <a :href="path">
+                        <aside class="d-flex flex-column gap-2 justify-content-center align-items-center h-100 bg-grad-light">
+                            <span class="material-symbols-outlined fs-1 text-m2">read_more</span>
+                            <span class="fs-xsmall font-normal">show more</span>
+                        </aside>
+                    </a>
                 </swiper-slide>
             </swiper-container>
         </div>

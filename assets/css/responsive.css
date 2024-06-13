@@ -6,7 +6,7 @@
         width: 30px;
     } */
     
-    #sidebar,#meetingSidebar {
+    #sidebar,#meetingSidebar,#footerMeetingSidebar {
         width: 85% !important;
     }
     .searchbar{
@@ -15,9 +15,9 @@
     .allo-aside{
         width: 90% !important;
     }
-    .ratio-lg{
+    /* .ratio-lg{
         aspect-ratio: 16/9 !important;
-    }
+    } */
 
 
 }
@@ -39,9 +39,9 @@
         width: 70% !important;
     }
     
-    .ratio-lg{
+    /* .ratio-lg{
         aspect-ratio: 16/9 !important;
-    }
+    } */
 
 }
 

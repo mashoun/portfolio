@@ -16,8 +16,8 @@
             </figure>
         </swiper-slide>
     </swiper-container>
-    <p class="mt-2 text-end fs-xsmall">{{slides.index}} / {{slides.length}}</p>
-    <div class="d-flex align-items-center justify-content-center gap-2">
+    <p v-if="slides.length > 1" class="mt-2 text-end fs-xsmall">{{slides.index}} / {{slides.length}}</p>
+    <div v-if="slides.length > 1" class="d-flex align-items-center justify-content-center gap-2">
         <span @click="slideBack()" aria-label="about" role="button" title="Slide back" class="d-flex gap-1 px-2 align-items-center bg-light border border-2 rounded fs-smaller">
             <span class="material-symbols-outlined">chevron_left</span>
             <!-- <span class="font-mono text-lowercase">back</span> -->
