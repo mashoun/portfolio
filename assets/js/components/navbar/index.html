@@ -2,9 +2,9 @@
     <section>
         <a href="/">
             <div class="d-flex align-items-center gap-2">
-                <img src="https://picsum.photos/100" alt="logo" class="skeleton img-fluid rounded navbar-logo" width="45" height="45">
+                <img src="https://picsum.photos/100" alt="logo" class="skeleton object-fit-cover rounded" width="35" height="35">
                 <div class="d-flex flex-column">
-                    <h1 class="fs-6 font-title">Mahmoud Mashoun</h1>
+                    <h6 class="fs-6 font-title">Mahmoud Mashoun</h6>
                     <p class="font-mono fs-xsmall text-fade">Google Workspace Automation, Full Stack Web Developer & GDG Organiser.</p>
                 </div>
             </div>
@@ -43,7 +43,7 @@
                 <div class="d-flex justify-content-center align-items-center gap-3 fs-5 text-m-dark">
                     <a v-for="node in socialMedia" :href="node.url"><i :class="node.icon "></i></a>
                 </div>
-                <i class="bi bi-arrow-return-right fs-5 mt-3" data-bs-dismiss="offcanvas" role="button"></i>
+                <div class="w-100 p-3 d-flex justify-content-center align-items-center" data-bs-dismiss="offcanvas" role="button"><i class="bi bi-arrow-return-right fs-5"></i></div>
             </section>
         </div>
     </aside>
