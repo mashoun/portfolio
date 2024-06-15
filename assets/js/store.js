@@ -11,6 +11,7 @@ export default {
     contact: {},
     links: [],
     schedule: [],
+    tagline:'Software Developer & GDG Organiser',
     footerLinks: [
         {
             text: 'Home Page',
@@ -42,21 +43,6 @@ export default {
             icon: 'event_upcoming',
             url: '/events/'
         },
-        // {
-        //     text: 'Anonymous Message',
-        //     icon: 'send',
-        //     url: '/'
-        // },
-        // {
-        //     text: 'Schedule a Meeting',
-        //     icon: 'video_call',
-        //     url: '/meeting/'
-        // },
-        // {
-        //     text: 'Subscribe',
-        //     icon: 'notifications',
-        //     url: '/'
-        // },
         {
             text: 'Terms Of Service',
             icon: 'description',
@@ -67,11 +53,6 @@ export default {
             icon: 'policy',
             url: '/policy'
         },
-        // {
-        //     text:'',
-        //     icon:'link',
-        //     url:'/'
-        // },
     ],
 
 }

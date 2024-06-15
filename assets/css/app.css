@@ -62,7 +62,11 @@
 }
 /* TEXT STYLES */
 .font-title {
-    font-family: "Poppins", sans-serif;
+    /* font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal; */
+    
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: 500;
     font-style: normal;
 }
@@ -78,10 +82,14 @@
 }
 
 .font-subtitle {
-    font-family: "Bebas Neue", sans-serif;
+    /* font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     font-style: normal;
-    color: var(--m-dark);
+    color: var(--m-dark); */
+    
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 600;
+    font-style: normal;
 }
 
 .font-normal {
