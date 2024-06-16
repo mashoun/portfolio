@@ -84,8 +84,17 @@ app.component('page-block', pageBlock)
 import pageList from './components/page-list/index.js'
 app.component('page-list', pageList)
 
+import pageHeader from './components/page-header/index.js'
+app.component('page-header', pageHeader)
+
 import pageSection from './components/page-section/index.js'
 app.component('page-section', pageSection)
+
+import hashtag from './components/hashtag/index.js'
+app.component('hashtag', hashtag)
+
+import pageSuggetion from './components/page-suggestion/index.js'
+app.component('page-suggestion', pageSuggetion)
 
 import heroSection from './components/hero-section/index.js'
 app.component('hero-section', heroSection)

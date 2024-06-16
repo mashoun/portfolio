@@ -7,7 +7,13 @@
             <span class="page-badge">{{data.badge}}</span>
             <time :datetime="data.timestamp">{{utilities.timo(data.timestamp)}}</time>
         </div>
-        <a :href="data.url"><h5 class="fs-6 font-mono fw-bold text-m text-fade-2 text-capitalize" style="min-height: 38.4px;">{{data.title}} <span v-if="data.subtitle.trim() != ''">- {{data.subtitle}}</span></h5></a>
+        <a :href="data.url">
+            <h6 class="fs-6 font-mono text-m text-fade-2 text-capitalize" style="min-height: 38.4px;">
+                <strong>{{data.title}}</strong>
+                <i class="bi bi-dot"></i>
+                <strong v-if="data.subtitle.trim() != ''">{{data.subtitle}}</strong>
+            </h6>
+        </a>
         <!-- <div class="border-start border-4 border-secondary ps-2 font-mono text-dark fs-small text-fade">{{data.subtitle}}</div> -->
         <p class="text-m-dark-grey fs-small text-fade-3 font-normal" style="min-height:63px;">{{data.description}}</p>
         <div class="d-flex flex-wrap gap-1 align-items-center" style="min-height: 37.2px; overflow: hidden !important;">

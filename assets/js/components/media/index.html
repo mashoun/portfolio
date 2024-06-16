@@ -1,4 +1,7 @@
-<section>
+<section v-if="store.spinner" class="article-media placeholder-glow">
+    <figure class="ratio ratio-16x9 placeholder rounded"></figure>
+</section>
+<section v-else >
     <swiper-container spaceBetween="15">
         <swiper-slide v-for="node in getImages">
             <figure class="ratio ratio-16x9 rounded">

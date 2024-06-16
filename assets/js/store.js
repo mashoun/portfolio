@@ -11,7 +11,8 @@ export default {
     contact: {},
     links: [],
     schedule: [],
-    tagline:'Software Developer & GDG Organiser',
+    tagline:'Software Developer',
+    bio:'Software Developer with expertise in Google Cloud Web Automation, Technical SEO, and AI Model Integration.',
     footerLinks: [
         {
             text: 'Home Page',

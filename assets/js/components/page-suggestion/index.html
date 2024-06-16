@@ -1,0 +1,45 @@
+<aside v-if="store.spinner" class="col-12 col-lg-6 col-xl-12 bg-light rounded p-2" v-for="node in ['','','']">
+    <div class="row justify-content-start g-2">
+        <div class="col-4 col-lg-2">
+            <div class="ratio ratio-16x9 placeholder-glow">
+                <div class="placeholder object-fit-cover rounded"></div>
+            </div>
+        </div>
+        <div class="col-8 col-lg-10">
+            <div class="d-flex flex-column justify-content-between gap-2 h-100 placeholder-glow">
+                <div class="d-flex flex-column gap-2">
+                    <span class="placeholder rounded-pill w-100" style="height: 7px;"></span>
+                    <span class="placeholder rounded-pill w-75" style="height: 7px;"></span>
+                </div>
+                <span class="bg-secondary rounded" style="width: 100px;height: 5px;"></span>
+            </div>
+        </div>
+    </div>
+</aside>
+<aside v-else class="col-12 col-lg-6 col-xl-12 bg-light rounded p-2" v-for="node in suggestions">
+    <div class="row justify-content-start g-2">
+        <div class="col-4 col-lg-3">
+            <div class="ratio ratio-16x9">
+                <img :src="node.media.split(',')[0]" alt="img" class="object-fit-cover rounded">
+            </div>
+        </div>
+        <div class="col-8 col-lg-9">
+            <div class="d-flex flex-column justify-content-start gap-1 h-100">
+                
+                <a :href="node.url">
+                    <p class="d-flex justify-content-start align-items-center fs-xsmall font-normal">
+                        <b>@{{node.folder}}</b>
+                        <i class="bi bi-dot"></i>
+                        <time :datetime="node.timestamp">{{utilities.timo(node.timestamp)}}</time>
+                    </p>
+                    <!-- <span class="material-symbols-outlined fs-6">navigate_next</span> -->
+                </a>
+                <div class="d-flex flex-column gap-1">
+                    <h6 class="fs-small font-title text-capitalize text-fade-2 text-m">
+                        {{node.title}} - {{node.subtitle}}
+                    </h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>

@@ -282,7 +282,7 @@ main{
 }
 
 footer {
-    padding: 3rem 1rem;
+    padding: 3rem .5rem;
     background-color: var(--m-dark);
     /* background-color: #0d1b2a; */
 }
@@ -420,7 +420,7 @@ nav>a:hover {
     display: flex;
     flex-direction: column;
     gap: .5rem;
-    padding: .5rem;
+    padding: .3rem;
     border-radius: .5rem;
     /* background-color: var(--bs-light); */
 }

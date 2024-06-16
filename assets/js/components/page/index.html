@@ -2,28 +2,12 @@
     <div class="row justify-content-between g-3">
         <div class="col-12 col-xl-8">
             <aside class="article-container bg-light rounded shadow-sm">
-                <!-- Header -->
-                <section class="d-flex align-items-center justify-content-between gap-1 pe-2">
-                    <a href="/" aria-label="page header">
-                        <div class="d-flex align-items-center gap-2">
-                            <img src="https://picsum.photos/100" alt="logo" class="objet-fit-cover rounded skeleton" width="35" height="35">
-                            <div class="d-flex flex-column gap-1">
-                                <h1 class="fs-6 font-title">Mahmoud Mashoun</h1>
-                                <h2 class="font-normal fs-xsmall">{{store.tagline}}</h2>
-                            </div>
-                        </div>
-                    </a>
-                    
-                </section>
+                <page-header></page-header>
 
-                <!-- MEDIA -->
-                <section v-if="store.spinner" class="article-media placeholder-glow">
-                    <figure class="ratio ratio-16x9 placeholder rounded"></figure>
-                </section>
-                <media v-else :images="selectedPage.media" :links="selectedPage.mediaLinks"></media>
+                <media :images="selectedPage.media" :links="selectedPage.mediaLinks"></media>
 
-                <!-- BODY -->
-                <section class="article-body"  :class="{'bg-dark rounded':darkMode}">
+                <section class="article-body">
+
                     <!-- Badge and Time -->
                     <div class="d-flex align-items-center gap-2">
                         <strong v-if="store.spinner" aria-label="page badge" class="rounded-pill bg-secondary" style="width: 75px;height: 10px;"></strong>
@@ -66,68 +50,23 @@
                     <!-- footer -->
                     <hr class="my-1">
                     <section class="article-footer gap-3">
-                        <div class="d-flex align-items-center gap-2 text-m-light-grey" @click="comingsoon()">
+                        <div class="d-flex align-items-center gap-2 text-m opacity-50" @click="comingsoon()">
                             <span class="material-symbols-outlined fs-5">favorite</span>
                             <span class="material-symbols-outlined fs-5">comment</span>
                             <span class="material-symbols-outlined fs-5">g_translate</span>
                         </div>
-
-                        <span class="material-symbols-outlined fs-5" @click="utilities.shareBy(selectedPage.title,selectedPage.url)" aria-label="about" role="button" title="Share this page">share</span>
+                        <span class="material-symbols-outlined fs-5 text-m" @click="utilities.shareBy(selectedPage.title,selectedPage.url)" aria-label="about" role="button" title="Share this page">send</span>
                     </section>
                 </section>
+
             </aside>
         </div>
         <div class="col-12 col-xl-4 h-100">
             <div class="row g-2">
                 <div class="col-12 sticky-part position-sticky">
-                    <aside class="p-2 bg-grad-light rounded text-center d-flex justify-content-center align-items-center gap-2">
-                        <strong class="font-normal fs-small fw-bold text-m-dark">#Suggested for you</strong>
-                    </aside>
-                    
+                    <hashtag>#Suggested For You</hashtag>
                 </div>
-                
-                <aside v-if="store.spinner" class="col-12 col-lg-6 col-xl-12 bg-light rounded p-2" v-for="node in ['','','']">
-                    <div class="row justify-content-start g-2">
-                        <div class="col-4 col-lg-2">
-                            <div class="ratio ratio-16x9 placeholder-glow">
-                                <div class="placeholder object-fit-cover rounded"></div>
-                            </div>
-                        </div>
-                        <div class="col-8 col-lg-10">
-                            <div class="d-flex flex-column justify-content-between gap-2 h-100 placeholder-glow">
-                                <div class="d-flex flex-column gap-2">
-                                    <span class="placeholder rounded-pill w-100" style="height: 7px;"></span>
-                                    <span class="placeholder rounded-pill w-75" style="height: 7px;"></span>
-                                </div>
-                                <span class="bg-secondary rounded" style="width: 100px;height: 5px;"></span>
-                            </div>
-                        </div>
-                    </div>
-                </aside>
-                
-                <aside v-if="!store.spinner" class="col-12 col-lg-6 col-xl-12 bg-light rounded p-2" v-for="node in suggestions">
-                    <div class="row justify-content-start g-2">
-                        <div class="col-4 col-lg-2">
-                            <div class="ratio ratio-16x9">
-                                <img :src="node.media.split(',')[0]" alt="img" class="object-fit-cover shadow-sm rounded">
-                            </div>
-                        </div>
-                        <div class="col-8 col-lg-10">
-                            <div class="d-flex flex-column justify-content-between gap-2 h-100">
-                                <div class="d-flex flex-column gap-1">
-                                    <h6 class="fs-small font-mono text-capitalize text-fade-2 text-m fw-bold">
-                                        <a :href="node.url" :aria-label="node.title">{{node.title}}</a>
-                                    </h6>
-                                </div>
-                                <a :href="node.url" class="d-flex justify-content-start align-items-center gap-3">
-                                    <span class="text-m-dark-grey fs-xsmall font-mono">@{{node.folder}} - {{utilities.timo(node.timestamp)}}</span>
-                                    <!-- <span class="material-symbols-outlined fs-6">navigate_next</span> -->
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </aside>
-                
+                <page-suggestion :suggestions="suggestions"></page-suggestion>
             </div>
         </div>
     </div>

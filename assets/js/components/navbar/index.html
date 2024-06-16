@@ -11,7 +11,7 @@
         </a>
     </section>
     <aside class="d-block d-lg-none">
-        <i class="bi bi-three-dots-vertical fs-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar"></i>
+        <i class="bi bi-three-dots-vertical fs-5" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar"></i>
         <div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
             <section class="d-flex flex-column gap-2 align-items-center" style="overflow-y: auto;">
                 <aside class="w-100 mb-5 position-relative">
@@ -22,9 +22,10 @@
                         <img src="/favicon.ico" alt="logo" class="object-fit-cover" width="80">
                     </div>
                 </aside>
-                <div class="d-flex flex-column align-items-center gap-1 px-3">
+                <div class="d-flex flex-column align-items-center gap-1">
                     <h1 class="fs-6 font-title text-m">Mahmoud Mashoun</h1>
-                    <p class="font-normal fs-xsmall text-center">{{store.tagline}}</p>
+                    <!-- <p class="font-normal fs-xsmall text-center fw-bold">{{store.tagline}}</p> -->
+                    <p class="font-normal fs-xsmall text-center">{{store.bio}}</p>
                 </div>
                 <div class="d-flex flex-wrap gap-2 text-dark px-3 justify-content-start my-3">
                     <a v-for="node in store.footerLinks" :key="node" :href="node.url" class="sidebar-link border border-1 border-dark">
