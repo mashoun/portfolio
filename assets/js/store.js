@@ -11,8 +11,8 @@ export default {
     contact: {},
     links: [],
     schedule: [],
-    tagline:'Software Developer',
-    bio:'Software Developer with expertise in Google Cloud Web Automation, Technical SEO, and AI Model Integration.',
+    tagline:'Full Stack Web Developer',
+    bio:'Full Stack Web Developer with expertise in Google Cloud Web Automation, Technical SEO, and AI Model Integration.',
     footerLinks: [
         {
             text: 'Home Page',
