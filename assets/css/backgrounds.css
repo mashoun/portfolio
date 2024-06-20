@@ -68,4 +68,6 @@
     background-image: linear-gradient(#ededf6 0.5px, transparent 0.5px), linear-gradient(to right, #ededf6 0.5px, transparent 0.5px);
     background-size: 25px 25px;
     background-color: #ffffff;
+    
+    background-attachment: fixed;
 }
